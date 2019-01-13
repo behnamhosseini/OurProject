@@ -174,21 +174,23 @@
 				{{--</li>--}}
 			</ul>
 
-			<div class="profile-completion">
+			@auth
+				<div class="profile-completion">
 
-				<div class="skills-item">
-					<div class="skills-item-info">
-						<span class="skills-item-title"> تکمیل مشخصات کاربری</span>
-						<span class="skills-item-count"><span class="count-animate" data-speed="1000" data-refresh-interval="200" data-to="{{$accountCompletion}}"  data-from="0"></span><span class="units">{{$accountCompletion}}%</span></span>
+					<div class="skills-item">
+						<div class="skills-item-info">
+							<span class="skills-item-title"> تکمیل مشخصات کاربری</span>
+							<span class="skills-item-count"><span class="count-animate" data-speed="1000" data-refresh-interval="200" data-to="{{$accountCompletion}}"  data-from="0"></span><span class="units">{{$accountCompletion}}%</span></span>
+						</div>
+						<div class="skills-item-meter">
+							<span class="skills-item-meter-active bg-primary" style="width: {{$accountCompletion}}%"></span>
+						</div>
 					</div>
-					<div class="skills-item-meter">
-						<span class="skills-item-meter-active bg-primary" style="width: {{$accountCompletion}}%"></span>
-					</div>
+
+					<span>اطلاعات <a href="#">حساب کاربری</a> را تکمیل کنید تا کاربران بتوانند شما را براحتی پیدا کنند!</span>
+
 				</div>
-
-				<span>اطلاعات <a href="#">حساب کاربری</a> را تکمیل کنید تا کاربران بتوانند شما را براحتی پیدا کنند!</span>
-
-			</div>
+			@endauth
 		</div>
 	</div>
 </div>
@@ -374,22 +376,23 @@
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 			<ul class="chat-users">
 				<?php $img = 1?>
-				@foreach(\App\User::all() as $user)
-					@if($user->id !== auth()->user()->id)
-						<li class="inline-items" >
-							<div class="author-thumb">
-								<img data-toggle="popover" data-trigger="hover" data-title="{{$user->firstName}}" data-content="{{cache('user-is-online-' . $user->id) ? 'Online' : "Last online : " . $user->lastActivity }}" alt="author" src="img/avatar6{{$img}}-sm.jpg" class="avatar">
-								<span class="icon-status {{cache('user-is-online-' . $user->id) ? 'online' : 'disconected'}}"></span>
-								{{--@if(!cache('user-is-online-' . $user->id))--}}
-									{{--<small>last online : {{$user->lastActivity}}</small>--}}
-								{{--@endif--}}
-							</div>
-							{{--<h6>{{$user->firstName}}</h6>--}}
-						</li>
-						<?php $img++ ?>
+					@if(auth()->check())
+						@foreach(\App\User::all() as $user)
+							@if($user->id !== auth()->user()->id)
+								<li class="inline-items" >
+									<div class="author-thumb">
+										<img data-toggle="popover" data-trigger="hover" data-title="{{$user->firstName}}" data-content="{{cache('user-is-online-' . $user->id) ? 'Online' : "Last online : " . $user->lastActivity }}" alt="author" src="img/avatar6{{$img}}-sm.jpg" class="avatar">
+										<span class="icon-status {{cache('user-is-online-' . $user->id) ? 'online' : 'disconected'}}"></span>
+										{{--@if(!cache('user-is-online-' . $user->id))--}}
+										{{--<small>last online : {{$user->lastActivity}}</small>--}}
+										{{--@endif--}}
+									</div>
+									{{--<h6>{{$user->firstName}}</h6>--}}
+								</li>
+                                <?php $img++ ?>
+							@endif
+						@endforeach
 					@endif
-				@endforeach
-
 			</ul>
 		</div>
 

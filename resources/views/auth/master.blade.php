@@ -104,18 +104,18 @@
 <script src="/js/theme-plugins.js"></script>
 
 <!-- Select / Sorting script -->
-<script src="js/selectize.min.js"></script>
+<script src="/js/selectize.min.js"></script>
 
 
 <!-- Lightbox plugin script-->
-<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
 
-<script src="js/mediaelement-and-player.min.js"></script>
-<script src="js/mediaelement-playlist-plugin.min.js"></script>
+<script src="/js/mediaelement-and-player.min.js"></script>
+<script src="/js/mediaelement-playlist-plugin.min.js"></script>
 
 
 <!-- Init functions -->
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 
 
 </body>

@@ -82,7 +82,6 @@
         </div>
     </div>
 
-    @include('sweet::alert')
 
     <script>
      $("#number").focus(function () {
@@ -117,6 +116,7 @@
                 _token: '{{ csrf_token() }}'
             },
 
+
         }).done(function(response) {
             if(response == '/login'){
                 window.location.assign(response);
@@ -131,13 +131,10 @@
                 $("#code").hide(function() {
                 });
              }else if(response == '/AccountSettings'){
-                window.location.assign(response);
-                $("#enter-m-n").hide(function() {
-                });
-                $("#code").hide(function() {
-                })
-            }
-                else {
+
+                window.location.replace(response);
+
+            } else {
                 $("#enter-m-n").hide(function() {
                    });
                 $("#code").show(function() {
