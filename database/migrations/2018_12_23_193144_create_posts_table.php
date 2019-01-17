@@ -17,7 +17,6 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('payment_id')->unsigned()->nullable();
             $table->text('body');
             $table->string('imageUrl')->nullable();
             $table->string('mood')->default("amo");
@@ -25,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('commentCount')->default(0);
             $table->integer('shareCount')->default(0);
             $table->string('postType')->default('post');
+            $table->string('location')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });
