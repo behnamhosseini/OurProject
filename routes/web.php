@@ -9,13 +9,15 @@ Route::get('/resetPassword', 'Auth\ForgotPasswordController@showLinkRequestForm'
 //registerActivationCode
 //Route::group(function(){
 
-    $this->get('/register', 'UserController@register')->name('register');
+$this->get('/register', 'UserController@register')->name('register');
 $this->post('/signup', 'PhoneActivationCodeController@create')->name('signup');
 
 $this->post('/checkcode', 'PhoneActivationCodeController@check')->name('checkCode');
 $this->post('/checkexist', 'UserController@checkexist');
 $this->post('/checkMaritalStatus', 'UserController@checkMaritalStatus');
 //});
+
+
 
 
 Route::middleware('checkFullyActivated')->group(function(){
@@ -46,6 +48,7 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/uploadFriendsImage','UserController@uploadFriendsImage')->name('uploadFriendsImage');
     $this->post('/uploadRelativesImage','UserController@uploadRelativesImage')->name('uploadRelativesImage');
     $this->post('/chargeYourAccount','UserController@chargeYourAccount')->name('chargeYourAccount');
+    Route::post('/ip','UserController@ip');
 
 });
 

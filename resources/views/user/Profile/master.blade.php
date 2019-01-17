@@ -17,6 +17,8 @@
 	<link href="/css/faceMocion.css" rel="stylesheet" type="text/css" />
 
 	<link rel="stylesheet" href="/css/emojionearea.css">
+	<link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/croppie.css">
+	<script src="http://demo.itsolutionstuff.com/plugin/croppie.js"></script>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="/Bootstrap/css/bootstrap-reboot.css">
@@ -34,14 +36,6 @@
 	<!-- Styles for plugins -->
 	<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-select.css">
-
-	<style>
-		a:hover{
-			text-decoration:none;
-		}
-	</style>
-
-
 </head>
 <body>
 
@@ -1902,38 +1896,37 @@
 </div>
 
 
+
 <script src="/js/faceMocion.js"></script>
 <script src="/js/webfontloader.min.js"></script>
 
 <!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
-
 <script>
-
     $(".facemocion").faceMocion( {emociones:[
-                                       {"emocion":"amo","TextoEmocion":"عاشقم!"},
-                                       {"emocion":"molesto","TextoEmocion":"عصبیم"},
-                                       {"emocion":"asusta","TextoEmocion":"ترسیدم"},
-                                       {"emocion":"divierte","TextoEmocion":"خیلی خنده داره"},
-                                       {"emocion":"gusta","TextoEmocion":"دوس دارم"},
-                                       {"emocion":"triste","TextoEmocion":"ناراحتم"},
-                                       {"emocion":"asombro","TextoEmocion":"متعجبم"},
-                                       {"emocion":"alegre","TextoEmocion":"خوشحالم"}
-                                   ]});
-
-                            </script>
+            {"emocion":"amo","TextoEmocion":"عاشقم!"},
+            {"emocion":"molesto","TextoEmocion":"عصبیم"},
+            {"emocion":"asusta","TextoEmocion":"ترسیدم"},
+            {"emocion":"divierte","TextoEmocion":"خیلی خنده داره"},
+            {"emocion":"gusta","TextoEmocion":"دوس دارم"},
+            {"emocion":"triste","TextoEmocion":"ناراحتم"},
+            {"emocion":"asombro","TextoEmocion":"متعجبم"},
+            {"emocion":"alegre","TextoEmocion":"خوشحالم"}
+        ]});
+</script>
 <script>
-	$(document).ready(function(){
-        $.ajax({
-            type: 'POST',
-            url: '/getCustomStatus',
-            data: {
-                _token: '{{ csrf_token() }}'
-            }
-        }).done(function(response) {
-            $("#customStatusShow").text(response)
-        });
+    $(document).ready(function(){
 
-		$("#customStatusForm").click(function(e){
+            $.ajax({
+                type: 'POST',
+                url: '/getCustomStatus',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                }
+            }).done(function(response) {
+                $("#customStatusShow").text(response)
+            });
+
+            $("#customStatusForm").click(function(e){
                 e.preventDefault();
                 $.ajax({
                     type: 'POST',
@@ -1955,22 +1948,82 @@
                     });
 
                 });
-		})
+            })
 
 
- 	   }
+        }
 
-	)
+    )
 
 
 
 </script>
-{{--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--}}
-<script src="/js/popper.min.js" ></script>
-<script src="/js/swiper.min.js" ></script>
-<script src="/js/bootstrap.min.js" ></script>
-{{--<script src="/js/bootstrap-select.min.js"></script>--}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#post").emojioneArea({
+            pickerPosition: "bottom"
+        });
+    });
+</script>
 
+
+<script type="text/javascript">
+
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
+    $uploadCrop = $('#upload-demo').croppie({
+        enableExif: true,
+        viewport: {
+            width: 200,
+            height: 200,
+        },
+        boundary: {
+            width: 250,
+            height: 250
+        }
+    });
+
+
+    $('#upload').on('change', function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $uploadCrop.croppie('bind', {
+                url: e.target.result
+            }).then(function(){
+                console.log('jQuery bind complete');
+            });
+        }
+        reader.readAsDataURL(this.files[0]);
+    });
+
+
+    $('.upload-result').on('click', function (ev) {
+        $uploadCrop.croppie('result', {
+            type: 'canvas',
+            size: 'viewport'
+        }).then(function (resp) {
+            html = '<img src="' + resp + '" />';
+            $("#upload-demo-i").html(html);
+            $("#postImage").val(resp);
+        });
+
+    });
+
+
+</script>
+
+
+
+
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/js/emojionearea.js"></script>
 <script src="/js/material.min.js"></script>
 <script src="/js/theme-plugins.js"></script>
 <script src="/js/selectize.min.js"></script>
@@ -1982,7 +2035,6 @@
 
 <script src="/js/mediaelement-and-player.min.js"></script>
 <script src="/js/mediaelement-playlist-plugin.min.js"></script>
-<script src="/js/emojionearea.js"></script>
 
 <!-- Init functions -->
 <script src="/js/main.js"></script>
