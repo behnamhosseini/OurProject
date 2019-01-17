@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-8 m-auto col-md-8 col-sm-12 col-xs-12">
                     <div class="main-header-content">
-                        <h1>{{auth()->user()->fullName()}}</h1>
+                        <h1>{{auth()->check()? auth()->user()->fullName() : ''}}</h1>
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
                         </p>
                     </div>

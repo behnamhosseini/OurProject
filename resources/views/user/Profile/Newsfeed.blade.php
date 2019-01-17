@@ -1,5 +1,6 @@
 @extends('user.Profile.master')
 @section('content2')
+
     <div class="header-spacer"></div>
     <div class="row">
         <!-- Left Sidebar -->
@@ -10,7 +11,7 @@
                 <div class="widget w-wethear">
                     <a href="#" class="more">
                         <svg class="olymp-three-dots-icon">
-                            <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                         </svg>
                     </a>
 
@@ -22,7 +23,7 @@
                         </div>
 
                         <svg class="olymp-weather-partly-sunny-icon">
-                            <use xlink:href="icons/icons-weather.svg#olymp-weather-partly-sunny-icon"></use>
+                            <use xlink:href="/icons/icons-weather.svg#olymp-weather-partly-sunny-icon"></use>
                         </svg>
                     </div>
 
@@ -41,7 +42,7 @@
                         <li>
                             <div class="day">1شنبه</div>
                             <svg class="olymp-weather-sunny-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-sunny-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-sunny-icon"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">60°</div>
@@ -50,7 +51,7 @@
                         <li>
                             <div class="day">2شنبه</div>
                             <svg class="olymp-weather-partly-sunny-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-partly-sunny-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-partly-sunny-icon"></use>
                             </svg>
                             <div class="temperature-sensor-day">58°</div>
                         </li>
@@ -58,7 +59,7 @@
                         <li>
                             <div class="day">3شنبه</div>
                             <svg class="olymp-weather-cloudy-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-cloudy-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-cloudy-icon"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">67°</div>
@@ -67,7 +68,7 @@
                         <li>
                             <div class="day">4شنبه</div>
                             <svg class="olymp-weather-rain-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-rain-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-rain-icon"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">70°</div>
@@ -76,7 +77,7 @@
                         <li>
                             <div class="day">5شنبه</div>
                             <svg class="olymp-weather-storm-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-storm-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-storm-icon"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">58°</div>
@@ -85,7 +86,7 @@
                         <li>
                             <div class="day">جمعه</div>
                             <svg class="olymp-weather-snow-icon">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-snow-icon"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-snow-icon"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">68°</div>
@@ -95,7 +96,7 @@
                             <div class="day">شنبه</div>
 
                             <svg class="olymp-weather-wind-icon-header">
-                                <use xlink:href="icons/icons-weather.svg#olymp-weather-wind-icon-header"></use>
+                                <use xlink:href="/icons/icons-weather.svg#olymp-weather-wind-icon-header"></use>
                             </svg>
 
                             <div class="temperature-sensor-day">65°</div>
@@ -117,7 +118,7 @@
                     <h6 class="title">صفحاتی که ممکن است بپسندید</h6>
                     <a href="#" class="more">
                         <svg class="olymp-three-dots-icon">
-                            <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                         </svg>
                     </a>
                 </div>
@@ -125,7 +126,7 @@
                 <ul class="widget w-friend-pages-added notification-list friend-requests">
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar41-sm.jpg" alt="author">
+                            <img src="/img/avatar41-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">رستوران باما</a>
@@ -135,7 +136,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -144,7 +145,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar42-sm.jpg" alt="author">
+                            <img src="/img/avatar42-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">دست ساز های قشنگ</a>
@@ -154,7 +155,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -162,7 +163,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar43-sm.jpg" alt="author">
+                            <img src="/img/avatar43-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">من یک طراحم</a>
@@ -172,7 +173,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -180,7 +181,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar44-sm.jpg" alt="author">
+                            <img src="/img/avatar44-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">بافتنی</a>
@@ -190,7 +191,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -198,7 +199,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar45-sm.jpg" alt="author">
+                            <img src="/img/avatar45-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">چی بپوشم</a>
@@ -208,7 +209,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -216,7 +217,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar46-sm.jpg" alt="author">
+                            <img src="/img/avatar46-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">اهنگ درخواستی</a>
@@ -226,7 +227,7 @@
                               data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
 									<svg class="olymp-star-icon">
-										<use xlink:href="icons/icons.svg#olymp-star-icon"></use>
+										<use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
 									</svg>
 								</a>
 							</span>
@@ -241,8 +242,10 @@
 
         <!-- Main Content -->
         <main class="col-xl-6 order-xl-2 order-sm-1 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12">
+            <!-- Start send post-->
+
             @auth()
-                <form action="/sendPost" method="post">
+                <form action="/sendPost" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="ui-block align-left">
                         <div class="news-feed-form">
@@ -256,7 +259,8 @@
 
                                 <li id="liLocation" class="col-xs-12 col-sm-12 col-md-6 my-auto  ">
                                     <span class="small">مکان شما:</span>
-                                    <span id="yourLocation" class="small"></span>
+                                    <span id="spanLocation"  class="small"></span>
+                                    <input type="hidden" id="Location" name="Location" class="small" value="">
                                 </li>
 
                                 <li class="col-xs-6 col-sm-2 col-md-1 my-auto ">
@@ -265,13 +269,12 @@
 
 
                             </ul>
+                            <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
                             <!-- Tab panes -->
-                            <div class="tab-content ">
+                            <div class="tab-content justify-content-between ">
                                 <div class="tab-pane active " id="home-1" role="tabpanel" aria-expanded="true">
-
-
                                     <div class="form-group label-floating ">
-                                        <textarea id="post" name="post" class="form-control" placeholder=""></textarea>
+                                        <textarea id="post" name="body" class="form-control" placeholder=""></textarea>
 
                                         <span class="material-input"></span></div>
                                     <div class="add-options-message ">
@@ -279,21 +282,70 @@
                                            data-original-title="افزودن تصویر" data-target="#update-header-photo">
                                             <svg class="olymp-camera-icon" data-toggle="modal"
                                                  data-target="#update-header-photo">
-                                                <use xlink:href="icons/icons.svg#olymp-camera-icon"></use>
+                                                <use xlink:href="/icons/icons.svg#olymp-camera-icon"></use>
                                             </svg>
                                         </a>
-                                        <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"
-                                           data-original-title="دوستانتان را تگ کتید">
-                                            <svg class="olymp-computer-icon">
-                                                <use xlink:href="icons/icons.svg#olymp-computer-icon"></use>
-                                            </svg>
-                                        </a>
+
+
+                                        <!-- Window-popup بروزرسانی تصویر هدر -->
+
+
+                                        <div class="modal fade"  id="update-header-photo" >
+                                            <div  class="modal-dialog ui-block window-popup">
+                                                <div class="ui-block-title" >
+                                                    <h6 class="title">یه عکس برای پست مورد نظرت انتخاب کن</h6>
+                                                </div>
+                                                <div class="container">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-body" >
+
+
+                                                            <div class="row">
+                                                                <div class="col-md-4 justify-content-center pl-5">
+                                                                    <div id="upload-demo" style="width:100%"></div>
+                                                                </div>
+                                                                <div class="col-md-4 justify-content-center my-auto">
+                                                                    <div class="panel-heading">عکس مورد نظر رو انتخاب و بعد از برش روی دکمه انتخاب شد کلیک کنید</div>
+                                                                    <br/>
+                                                                    <label for="upload">انتخاب عکس</label>
+                                                                    <input type="file" id="upload" value="انتخاب عکس" class="file" placeholder="انتخاب عکس" >
+                                                                    <br/>
+                                                                    <button type="button" id="uploadBtn" class="btn btn-success upload-result mb-1">آپلود</button>
+                                                                </div>
+
+
+                                                                <div class="col-md-4 justify-content-center my-auto" >
+                                                                    <div id="upload-demo-i" class="content-center my-auto mx-auto" style="width:200px;height:200px"></div>
+                                                                    <input type="hidden" id="postImage" name="imageUrl" value="">
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="close" class="btn btn-success" data-dismiss="modal">بستن</button>
+                                                    <script>
+                                                        $("#uploadBtn").click(function () {
+                                                            $("#close").text('انتخاب شد');
+                                                        })
+                                                    </script>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <!-- End-popup بروزرسانی تصویر هدر -->
 
                                         <a class="options-message" data-toggle="tooltip"
                                            data-placement="top"
                                            data-original-title="افزودن لوکیشن">
-                                            <svg id="location"  class="olymp-small-pin-icon">
-                                                <use xlink:href="icons/icons.svg#olymp-small-pin-icon"></use>
+                                            <svg id="location" class="olymp-small-pin-icon">
+                                                <use xlink:href="/icons/icons.svg#olymp-small-pin-icon"></use>
                                             </svg>
                                         </a>
 
@@ -303,422 +355,85 @@
                                                 $.ajax({
                                                     url: '/ip',
                                                     type: 'post',
-                                                    data:{
-                                                        _token:'{{csrf_token()}}'
+                                                    data: {
+                                                        _token: '{{csrf_token()}}'
                                                     },
                                                     success: function (sity) {
                                                         $('#liLocation').show();
-                                                        $('#yourLocation').text(sity);
+                                                        $('#spanLocation').text(sity);
+                                                        $('#Location').val(sity);
                                                     }
                                                 })
 
                                             })
                                         </script>
-                                        <div class="btn-group rounded-right">
-                                            <button id="vip" data-toggle="tooltip"
-                                                    data-original-title="پستتو داغ کن تا همه ی ادما ببیننش"
-                                                    data-placement="top" class=" rounded-left btn btn-danger btn-md-2">
-                                                داغ کن
-                                            </button>
-                                            <button class=" rounded-right btn btn-primary  btn-md-2 ">ارسال</button>
-                                            {{--</div>--}}
+
+                                        <button type="submit" class="btn btn-breez-light">ارسال</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sendVipPost">داغش کن!</button>
+
+                                        <!-- Window-popup ارسال پست ویژه -->
+
+                                        <div class="modal fade" id="sendVipPost" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title float-right">پستتو داغش کن!</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="container">
+                                                            <div class="jumbotron">
+                                                                <h6>دوس داری پستی که میذاری رو همه ببینن؟حتی کسایی که با هم دوست نیستین!</h6>
+                                                                <p>با استفاده از داغش کن پستی که میزاری بعنوان اولین پست برای تمامی اعضای این برنامه نمایش داده میشه و میتونی بعنوان تبلیغ کار یا هر چیزی که میخوای ازش استفاده کنی!</p>
+                                                                <p>فقط برای استفاده از این قابلیت حداقل باید 1000 تومن شارژ داشته باشی</p>
+                                                            </div>
+                                                            @if(auth()->user()->credit < 1000)
+                                                                <div class="alert alert-danger"> شارژ شما برای ارسال پست داغ کافی نیست.برای افزایش شارژ روی دکمه افزایش شارژ کلیک کنید</div>
+                                                            @endif()
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <div>
+                                                            <span>مقدار شارژ شما :{{auth()->user()->credit}} تومان</span>
+                                                        </div>
+                                                        <div>
+                                                            <button type="button" class="btn btn-outline-grey" data-dismiss="modal">بستن</button>
+                                                            @if(auth()->user()->credit >= 1000)
+                                                                <button type="submit" class="btn btn-danger">بزن بریم!</button>
+                                                                <input name="postType" type="hidden" value="vip">
+                                                            @else
+                                                                <a href="/ProfilePageFinancialAffairs/{{auth()->user()->userName}}"class="btn btn-danger">افزایش شارژ</a>
+                                                            @endif()
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <!-- End-popup ارسال پست ویژه -->
+
+
+
+
+
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </form>
-            @endauth()
+        @endauth()
+
+        <!--End send post-->
 
             <div id="newsfeed-items-grid">
-
                 <div class="ui-block">
-                    <article class="hentry post video">
+                    <article class="hentry post has-post-thumbnail" >
 
                         <div class="post__author author vcard inline-items">
-                            <img src="img/avatar7-sm.jpg" alt="author">
-
-                            <div class="author-date">
-                                <a class="h6 post__author-name fn" href="#">مریم صفری</a>
-                                <a href="#">یک لینک</a> به اشتراک گذاشت.
-                                <div class="post__date">
-                                    <time class="published" datetime="2004-07-24T18:18">
-                                        27 مرداد 1397
-                                    </time>
-                                </div>
-                            </div>
-
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                </svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">ویرایش پست</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">حذف</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خاموش کردن اطلاعیه ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">انتخاب بعنوان ویژه شده</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه
-                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            <a href="#">تکنولوژی</a> مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                        </p>
-
-                        <div class="post-video">
-                            <div class="video-thumb">
-                                <img src="img/video-youtube1.jpg" alt="photo">
-                                <a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
-                                    <svg class="olymp-play-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-play-icon"></use>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="video-content">
-                                <a href="#" class="h4 title">روش بازسازی الکترون ها</a>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است...
-                                </p>
-                                <a href="#" class="link-site">aparat.com</a>
-                            </div>
-                        </div>
-
-                        <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>18</span>
-                            </a>
-
-                            <ul class="friends-harmonic">
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic9.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic10.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic7.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic8.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic11.jpg" alt="friend">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="names-people-likes">
-                                <a href="#">ملیحه</a>,
-                                <a href="#">احسان</a> و
-                                <br>18 کاربر این پست را پسندیدند
-                            </div>
-
-                            <div class="comments-shared">
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-speech-balloon-icon"></use>
-                                    </svg>
-
-                                    <span>0</span>
-                                </a>
-
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-share-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                    </svg>
-
-                                    <span>16</span>
-                                </a>
-                            </div>
-
-
-                        </div>
-
-                        <div class="control-block-button post-control-button">
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-like-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-like-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-comments-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-share-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-
-                    </article>
-                </div>
-
-                <div class="ui-block">
-                    <article class="hentry post">
-
-                        <div class="post__author author vcard inline-items">
-                            <img src="img/avatar10-sm.jpg" alt="author">
-
-                            <div class="author-date">
-                                <a class="h6 post__author-name fn" href="#">باقری</a>
-                                <div class="post__date">
-                                    <time class="published" datetime="2004-07-24T18:18">
-                                        9 ساعت قبل
-                                    </time>
-                                </div>
-                            </div>
-
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                </svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">ویرایش پست</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">حذف</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خاموش کردن اطلاعیه ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">انتخاب بعنوان ویژه شده</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه
-                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                            متنوع با هدف بهبود ابزارهای
-                            کاربردی می باشد.
-                        </p>
-
-                        <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>24</span>
-                            </a>
-
-                            <ul class="friends-harmonic">
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic7.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic8.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic9.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic10.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic11.jpg" alt="friend">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="names-people-likes">
-                                <a href="#">شما</a>,
-                                <a href="#">ملانی</a> و
-                                <br>22 کاربر این پست را پسندیدند
-                            </div>
-
-
-                            <div class="comments-shared">
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-speech-balloon-icon"></use>
-                                    </svg>
-                                    <span>17</span>
-                                </a>
-
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-share-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                    </svg>
-                                    <span>24</span>
-                                </a>
-                            </div>
-
-
-                        </div>
-
-                        <div class="control-block-button post-control-button">
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-like-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-like-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-comments-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-share-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                    <ul class="comments-list">
-                        <li>
-                            <div class="post__author author vcard inline-items">
-                                <img src="img/author-page.jpg" alt="author">
-
-                                <div class="author-date">
-                                    <a class="h6 post__author-name fn" href="02-ProfilePage.html">کامرانی</a>
-                                    <div class="post__date">
-                                        <time class="published" datetime="2004-07-24T18:18">
-                                            38 دقیقه قبل
-                                        </time>
-                                    </div>
-                                </div>
-
-                                <a href="#" class="more">
-                                    <svg class="olymp-three-dots-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                    </svg>
-                                </a>
-
-                            </div>
-
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است. </p>
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>3</span>
-                            </a>
-                            <a href="#" class="reply">پاسخ</a>
-                        </li>
-                        <li>
-                            <div class="post__author author vcard inline-items">
-                                <img src="img/avatar1-sm.jpg" alt="author">
-
-                                <div class="author-date">
-                                    <a class="h6 post__author-name fn" href="#">عسگری</a>
-                                    <div class="post__date">
-                                        <time class="published" datetime="2004-07-24T18:18">
-                                            1 ساعت قبل
-                                        </time>
-                                    </div>
-                                </div>
-
-                                <a href="#" class="more">
-                                    <svg class="olymp-three-dots-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                    </svg>
-                                </a>
-
-                            </div>
-
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است. چاپگرها و متون بلکه
-                                روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                کاربردهای متنوع با هدف بهبود
-                                ابزارهای کاربردی می باشد.
-                            </p>
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>8</span>
-                            </a>
-                            <a href="#" class="reply">پاسخ</a>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="more-comments">مشاهده نظرات بیشتر
-                        <span>+</span>
-                    </a>
-
-                    <form class="comment-form inline-items">
-
-                        <div class="post__author author vcard inline-items">
-                            <img src="img/author-page.jpg" alt="author">
-
-                            <div class="form-group with-icon-right is-empty">
-                                <textarea class="form-control" placeholder=""></textarea>
-                                <div class="add-options-message">
-                                    <a href="#" class="options-message" data-toggle="modal"
-                                       data-target="#update-header-photo">
-                                        <svg class="olymp-camera-icon">
-                                            <use xlink:href="icons/icons.svg#olymp-camera-icon"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <span class="material-input"></span></div>
-                        </div>
-
-                    </form>
-
-                </div>
-
-                <div class="ui-block">
-                    <article class="hentry post has-post-thumbnail">
-
-                        <div class="post__author author vcard inline-items">
-                            <img src="img/avatar5-sm.jpg" alt="author">
+                            <img src="" alt="author">
 
                             <div class="author-date">
                                 <a class="h6 post__author-name fn" href="#">فائزه اسحاقی</a>
@@ -731,7 +446,7 @@
 
                             <div class="more">
                                 <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                                    <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                                 </svg>
                                 <ul class="more-dropdown">
                                     <li>
@@ -751,21 +466,17 @@
 
                         </div>
 
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه
-                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            <a href="">تکنولوژی</a> مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                        </p>
+                        <p></p>
 
                         <div class="post-thumb">
-                            <img src="img/post__thumb1.jpg" alt="photo">
+                            <img src=""  alt="photo" style="position: relative">
                         </div>
 
                         <div class="post-additional-info inline-items">
 
                             <a href="#" class="post-add-icon inline-items">
                                 <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
+                                    <use xlink:href="/icons/icons.svg#olymp-heart-icon"></use>
                                 </svg>
                                 <span>49</span>
                             </a>
@@ -773,27 +484,27 @@
                             <ul class="friends-harmonic">
                                 <li>
                                     <a href="#">
-                                        <img src="img/friend-harmonic9.jpg" alt="friend">
+                                        <img src="/img/friend-harmonic9.jpg" alt="friend">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/friend-harmonic10.jpg" alt="friend">
+                                        <img src="/img/friend-harmonic10.jpg" alt="friend">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/friend-harmonic7.jpg" alt="friend">
+                                        <img src="/img/friend-harmonic7.jpg" alt="friend">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/friend-harmonic8.jpg" alt="friend">
+                                        <img src="/img/friend-harmonic8.jpg" alt="friend">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="img/friend-harmonic11.jpg" alt="friend">
+                                        <img src="/img/friend-harmonic11.jpg" alt="friend">
                                     </a>
                                 </li>
                             </ul>
@@ -808,14 +519,14 @@
                             <div class="comments-shared">
                                 <a href="#" class="post-add-icon inline-items">
                                     <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-speech-balloon-icon"></use>
+                                        <use xlink:href="/icons/icons.svg#olymp-speech-balloon-icon"></use>
                                     </svg>
                                     <span>264</span>
                                 </a>
 
                                 <a href="#" class="post-add-icon inline-items">
                                     <svg class="olymp-share-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
+                                        <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
                                     </svg>
                                     <span>37</span>
                                 </a>
@@ -828,248 +539,19 @@
 
                             <a href="#" class="btn btn-control">
                                 <svg class="olymp-like-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-like-post-icon"></use>
+                                    <use xlink:href="/icons/icons.svg#olymp-like-post-icon"></use>
                                 </svg>
                             </a>
 
                             <a href="#" class="btn btn-control">
                                 <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-comments-post-icon"></use>
+                                    <use xlink:href="/icons/icons.svg#olymp-comments-post-icon"></use>
                                 </svg>
                             </a>
 
                             <a href="#" class="btn btn-control">
                                 <svg class="olymp-share-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-
-                    </article>
-                </div>
-
-                <div class="ui-block">
-                    <article class="hentry post has-post-thumbnail">
-
-                        <div class="post__author author vcard inline-items">
-                            <img src="img/avatar3-sm.jpg" alt="author">
-
-                            <div class="author-date">
-                                <a class="h6 post__author-name fn" href="#">سارا حبیبی</a>
-                                <div class="post__date">
-                                    <time class="published" datetime="2004-07-24T18:18">
-                                        22 فروردین 1397
-                                    </time>
-                                </div>
-                            </div>
-
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                </svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">ویرایش پست</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">حذف</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خاموش کردن اطلاعیه ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">انتخاب بعنوان ویژه شده</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه
-                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                            متنوع با هدف بهبود ابزارهای
-                            کاربردی می باشد.
-                        </p>
-
-                        <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>0 لایک</span>
-                            </a>
-
-                            <div class="comments-shared">
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-speech-balloon-icon"></use>
-                                    </svg>
-                                    <span>0 نظرات</span>
-                                </a>
-
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-share-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                    </svg>
-                                    <span>2 اشتراک گذاری</span>
-                                </a>
-                            </div>
-
-
-                        </div>
-
-                        <div class="control-block-button post-control-button">
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-like-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-like-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-comments-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-share-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-
-                    </article>
-                </div>
-
-                <div class="ui-block">
-                    <article class="hentry post has-post-thumbnail">
-
-                        <div class="post__author author vcard inline-items">
-                            <img src="img/avatar2-sm.jpg" alt="author">
-
-                            <div class="author-date">
-                                <a class="h6 post__author-name fn" href="#">شادی</a>
-                                <div class="post__date">
-                                    <time class="published" datetime="2004-07-24T18:18">
-                                        25 خرداد 1397
-                                    </time>
-                                </div>
-                            </div>
-
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                                </svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">ویرایش</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">حذف</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خاموش کردن اطلاعیه ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">انتخاب بعنوان ویژه شده</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                            چاپگرها و متون بلکه روزنامه
-                            و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                            متنوع با هدف بهبود ابزارهای
-                            کاربردی می باشد.
-                        </p>
-
-                        <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>22</span>
-                            </a>
-
-                            <ul class="friends-harmonic">
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic9.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic10.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic7.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic8.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/friend-harmonic11.jpg" alt="friend">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="names-people-likes">
-                                <a href="#">محمد</a>,
-                                <a href="#">ایدین</a> و
-                                <br>47 کاربر این پست را پسندیدند
-                            </div>
-
-
-                            <div class="comments-shared">
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-speech-balloon-icon"></use>
-                                    </svg>
-                                    <span>0</span>
-                                </a>
-
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-share-icon">
-                                        <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
-                                    </svg>
-                                    <span>2</span>
-                                </a>
-                            </div>
-
-
-                        </div>
-
-                        <div class="control-block-button post-control-button">
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-like-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-like-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-comments-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-share-icon">
-                                    <use xlink:href="icons/icons.svg#olymp-share-icon"></use>
+                                    <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
                                 </svg>
                             </a>
 
@@ -1083,7 +565,7 @@
             <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html"
                data-container="newsfeed-items-grid">
                 <svg class="olymp-three-dots-icon">
-                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                    <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                 </svg>
             </a>
         </main>
@@ -1091,26 +573,9 @@
 
     {{--<body class="overlay-enable modal-open">--}}
 
-    <!-- Window-popup بروزرسانی تصویر هدر -->
-
-        <div class="modal fade" id="update-header-photo">
-            <div class="modal-dialog ui-block window-popup update-hmaieader-photo">
-                <a href="cm" class="upload-photo-item">
-                    <svg class="olymp-computer-icon">
-                        <use xlink:href="icons/icons.svg#olymp-computer-icon"></use>
-                    </svg>
-
-                    <h6 class="align-center">بارگذاری تصویر</h6>
-                    <span>از سیستم</span>
-                </a>
-            </div>
-        </div>
 
 
-        <!-- ... end Main Content -->
-
-
-        <!-- Right Sidebar -->
+    <!-- Right Sidebar -->
 
         <aside class="col-xl-3 order-xl-3 order-sm-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12">
 
@@ -1118,18 +583,18 @@
                 <div class="widget w-birthday-alert">
                     <div class="icons-block">
                         <svg class="olymp-cupcake-icon">
-                            <use xlink:href="icons/icons.svg#olymp-cupcake-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-cupcake-icon"></use>
                         </svg>
                         <a href="#" class="more">
                             <svg class="olymp-three-dots-icon">
-                                <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                                <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                             </svg>
                         </a>
                     </div>
                     @auth()
                         <div class="content">
                             <div class="author-thumb">
-                                <img src="img/avatar48-sm.jpg" alt="author">
+                                <img src="/img/avatar48-sm.jpg" alt="author">
                             </div>
                             <span>امروز</span>
                             <a href="#" class="h4 title">تولد مریم صفری</a> است.
@@ -1140,7 +605,7 @@
                         <div class="ui-block">
                             <div class="widget w-action">
 
-                                <img src="img/logo.png" alt="Olympus">
+                                <img src="/img/logo.png" alt="Olympus">
                                 <div class="content">
                                     <h4 class="title">الیمپوس</h4>
                                     <span>بهترین شبکه اجتماعی در اینجاست!</span>
@@ -1158,15 +623,15 @@
                     <h6 class="title">پیشنهاد دوستان</h6>
                     <a href="#" class="more">
                         <svg class="olymp-three-dots-icon">
-                            <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
-                        </svg>
+                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
+                            --                        </svg>
                     </a>
                 </div>
 
                 <ul class="widget w-friend-pages-added notification-list friend-requests">
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar38-sm.jpg" alt="author">
+                            <img src="/img/avatar38-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">نسرین</a>
@@ -1176,7 +641,7 @@
 								<a href="#" class="accept-request">
 									<span class="icon-add without-text">
 										<svg class="olymp-happy-face-icon">
-											<use xlink:href="icons/icons.svg#olymp-happy-face-icon"></use>
+											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
 										</svg>
 									</span>
 								</a>
@@ -1186,7 +651,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar39-sm.jpg" alt="author">
+                            <img src="/img/avatar39-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">مریلا</a>
@@ -1196,7 +661,7 @@
 								<a href="#" class="accept-request">
 									<span class="icon-add without-text">
 										<svg class="olymp-happy-face-icon">
-											<use xlink:href="icons/icons.svg#olymp-happy-face-icon"></use>
+											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
 										</svg>
 									</span>
 								</a>
@@ -1206,7 +671,7 @@
 
                     <li class="inline-items">
                         <div class="author-thumb">
-                            <img src="img/avatar40-sm.jpg" alt="author">
+                            <img src="/img/avatar40-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">کامران</a>
@@ -1216,7 +681,7 @@
 								<a href="#" class="accept-request">
 									<span class="icon-add without-text">
 										<svg class="olymp-happy-face-icon">
-											<use xlink:href="icons/icons.svg#olymp-happy-face-icon"></use>
+											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
 										</svg>
 									</span>
 								</a>
@@ -1234,7 +699,7 @@
                     <h6 class="title">خوراک فعالیت</h6>
                     <a href="#" class="more">
                         <svg class="olymp-three-dots-icon">
-                            <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                         </svg>
                     </a>
                 </div>
@@ -1242,7 +707,7 @@
                 <ul class="widget w-activity-feed notification-list">
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar49-sm.jpg" alt="author">
+                            <img src="/img/avatar49-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">فاطمه</a> به
@@ -1255,7 +720,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar9-sm.jpg" alt="author">
+                            <img src="/img/avatar9-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">فاطمه </a>
@@ -1268,7 +733,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar50-sm.jpg" alt="author">
+                            <img src="/img/avatar50-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">احمدی </a> 20 تصویر به
@@ -1281,7 +746,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar51-sm.jpg" alt="author">
+                            <img src="/img/avatar51-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">فاطمه </a>
@@ -1293,7 +758,7 @@
                     </li>
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar48-sm.jpg" alt="author">
+                            <img src="/img/avatar48-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">فاطمه </a>
@@ -1306,7 +771,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar52-sm.jpg" alt="author">
+                            <img src="/img/avatar52-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">فائزه واعظی </a>یک
@@ -1318,7 +783,7 @@
                     </li>
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar10-sm.jpg" alt="author">
+                            <img src="/img/avatar10-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">الهه حسینی </a>
@@ -1331,7 +796,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar10-sm.jpg" alt="author">
+                            <img src="/img/avatar10-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">الهه حسینی </a>
@@ -1344,7 +809,7 @@
 
                     <li>
                         <div class="author-thumb">
-                            <img src="img/avatar53-sm.jpg" alt="author">
+                            <img src="/img/avatar53-sm.jpg" alt="author">
                         </div>
                         <div class="notification-event">
                             <a href="#" class="h6 notification-friend">مهدی زاده </a>
@@ -1375,10 +840,10 @@
             <h6 class="title">چت</h6>
             <div class="more">
                 <svg class="olymp-three-dots-icon">
-                    <use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use>
+                    <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                 </svg>
                 <svg class="olymp-little-delete js-chat-open">
-                    <use xlink:href="icons/icons.svg#olymp-little-delete"></use>
+                    <use xlink:href="/icons/icons.svg#olymp-little-delete"></use>
                 </svg>
             </div>
         </div>
@@ -1386,7 +851,7 @@
             <ul class="notification-list chat-message chat-message-field">
                 <li>
                     <div class="author-thumb">
-                        <img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+                        <img src="/img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
                     </div>
                     <div class="notification-event">
                         <span class="chat-message-item">فاطمه کاظمی زاده عزیز. سلام. لطفا فراموش نکن که برای فردا محصولاتی که به شما گفتم را خریداری کنی..</span>
@@ -1398,7 +863,7 @@
 
                 <li>
                     <div class="author-thumb">
-                        <img src="img/author-page.jpg" alt="author" class="mCS_img_loaded">
+                        <img src="/img/author-page.jpg" alt="author" class="mCS_img_loaded">
                     </div>
                     <div class="notification-event">
                         <span class="chat-message-item">اصلا نگران نباش!</span>
@@ -1411,7 +876,7 @@
 
                 <li>
                     <div class="author-thumb">
-                        <img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+                        <img src="/img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
                     </div>
                     <div class="notification-event">
                         <span class="chat-message-item">فاطمه کاظمی زاده عزیز. سلام. لطفا فراموش نکن که برای فردا محصولاتی که به شما گفتم را خریداری کنی..</span>
@@ -1438,149 +903,149 @@
                 <div class="add-options-message">
                     <a href="#" class="options-message">
                         <svg class="olymp-computer-icon">
-                            <use xlink:href="icons/icons.svg#olymp-computer-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-computer-icon"></use>
                         </svg>
                     </a>
                     <div class="options-message smile-block">
 
                         <svg class="olymp-happy-sticker-icon">
-                            <use xlink:href="icons/icons.svg#olymp-happy-sticker-icon"></use>
+                            <use xlink:href="/icons/icons.svg#olymp-happy-sticker-icon"></use>
                         </svg>
 
                         <ul class="more-dropdown more-with-triangle triangle-bottom-right">
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat1.png" alt="icon">
+                                    <img src="/img/icon-chat1.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat2.png" alt="icon">
+                                    <img src="/img/icon-chat2.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat3.png" alt="icon">
+                                    <img src="/img/icon-chat3.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat4.png" alt="icon">
+                                    <img src="/img/icon-chat4.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat5.png" alt="icon">
+                                    <img src="/img/icon-chat5.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat6.png" alt="icon">
+                                    <img src="/img/icon-chat6.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat7.png" alt="icon">
+                                    <img src="/img/icon-chat7.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat8.png" alt="icon">
+                                    <img src="/img/icon-chat8.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat9.png" alt="icon">
+                                    <img src="/img/icon-chat9.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat10.png" alt="icon">
+                                    <img src="/img/icon-chat10.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat11.png" alt="icon">
+                                    <img src="/img/icon-chat11.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat12.png" alt="icon">
+                                    <img src="/img/icon-chat12.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat13.png" alt="icon">
+                                    <img src="/img/icon-chat13.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat14.png" alt="icon">
+                                    <img src="/img/icon-chat14.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat15.png" alt="icon">
+                                    <img src="/img/icon-chat15.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat16.png" alt="icon">
+                                    <img src="/img/icon-chat16.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat17.png" alt="icon">
+                                    <img src="/img/icon-chat17.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat18.png" alt="icon">
+                                    <img src="/img/icon-chat18.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat19.png" alt="icon">
+                                    <img src="/img/icon-chat19.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat20.png" alt="icon">
+                                    <img src="/img/icon-chat20.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat21.png" alt="icon">
+                                    <img src="/img/icon-chat21.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat22.png" alt="icon">
+                                    <img src="/img/icon-chat22.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat23.png" alt="icon">
+                                    <img src="/img/icon-chat23.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat24.png" alt="icon">
+                                    <img src="/img/icon-chat24.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat25.png" alt="icon">
+                                    <img src="/img/icon-chat25.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat26.png" alt="icon">
+                                    <img src="/img/icon-chat26.png" alt="icon">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="img/icon-chat27.png" alt="icon">
+                                    <img src="/img/icon-chat27.png" alt="icon">
                                 </a>
                             </li>
                         </ul>

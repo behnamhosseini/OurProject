@@ -65,7 +65,7 @@
                         <div class="friend-item-content">
                             <div class="friend-avatar">
                                 <div class="author-thumb">
-                                    <img src="{{$user->profilePictures['everyOne']}}" alt="author">
+                                    <img src="{{$user->profilePictures['everyOne'] != null ? $user->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}" alt="author">
                                 </div>
                                 <div class="author-content">
                                     <h3 class="h5 author-name">رسید پرداخت شما </h3>

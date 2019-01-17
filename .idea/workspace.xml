@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/user/Profile/AccountSettings.blade.php" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ca83bb-39d9-45af-8564-ac8d5eac8d73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/Profile/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/Profile/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="f0ca83bb-39d9-45af-8564-ac8d5eac8d73" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +58,16 @@
           <entry key="env" value="15" />
           <entry key="gitignore" value="38" />
           <entry key="js" value="525" />
-          <entry key="php" value="37168" />
+          <entry key="php" value="37218" />
           <entry key="scss" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="23255" />
+          <entry key="Blade" value="23279" />
           <entry key="CSS" value="350" />
           <entry key="JavaScript" value="525" />
-          <entry key="PHP" value="13913" />
+          <entry key="PHP" value="13939" />
           <entry key="PLAIN_TEXT" value="55" />
           <entry key="SCSS" value="74" />
         </counts>
@@ -88,7 +82,7 @@
           <entry key="js" value="37" />
           <entry key="json" value="12" />
           <entry key="lock" value="1" />
-          <entry key="php" value="445" />
+          <entry key="php" value="452" />
           <entry key="png" value="9" />
           <entry key="rnc" value="3" />
           <entry key="scss" value="3" />
@@ -98,13 +92,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="274" />
+          <entry key="Blade" value="278" />
           <entry key="CSS" value="39" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="32" />
           <entry key="JSON" value="13" />
           <entry key="JavaScript" value="37" />
-          <entry key="PHP" value="171" />
+          <entry key="PHP" value="174" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="RNG Compact" value="3" />
           <entry key="SCSS" value="3" />
@@ -117,64 +111,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/ProfilePage.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="568" column="84" selection-start-line="568" selection-start-column="84" selection-end-line="568" selection-end-column="84" />
-              <folding>
-                <element signature="e#34877#36453#0#HTML" />
-                <element signature="e#40205#43864#0#HTML" />
-                <element signature="e#43882#53592#0#HTML" />
-                <element signature="e#53724#67387#0#HTML" />
-                <element signature="e#54004#66823#0#HTML" />
-                <element signature="e#67465#78135#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.lock">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+            <state relative-caret-position="312">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -182,22 +140,60 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_193144_create_posts_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="2019" lean-forward="true" selection-start-line="2019" selection-end-line="2019" />
+            <state relative-caret-position="804">
+              <caret line="2039" column="23" selection-start-line="2039" selection-start-column="23" selection-end-line="2039" selection-end-column="23" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#39553#39558#0#HTML" expanded="true" />
+                <element signature="n#header#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#60240#60245#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/Newsfeed.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="405" column="68" selection-start-line="405" selection-start-column="68" selection-end-line="405" selection-end-column="68" />
+              <folding>
+                <element signature="e#153#10157#0#HTML" />
+                <element signature="e#13998#14016#0#HTML" expanded="true" />
+                <element signature="e#15278#15310#0#HTML" expanded="true" />
+                <element signature="e#19126#19133#1#HTML" expanded="true" />
+                <element signature="e#24242#24268#0#HTML" expanded="true" />
+                <element signature="e#28834#40112#0#HTML" />
+                <element signature="e#40265#40776#0#HTML" />
+                <element signature="e#40785#43228#0#HTML" />
+                <element signature="e#42873#42904#0#HTML" expanded="true" />
+                <element signature="e#42964#42994#0#HTML" expanded="true" />
+                <element signature="e#43067#43097#0#HTML" expanded="true" />
+                <element signature="e#43157#43187#0#HTML" expanded="true" />
+                <element signature="e#43259#50494#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -207,10 +203,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-financialAffairs.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="78" column="47" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+            <state relative-caret-position="456">
+              <caret line="67" column="154" selection-start-line="67" selection-start-column="154" selection-end-line="67" selection-end-column="154" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Profile.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="104" column="150" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="150" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -226,12 +240,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auth()</find>
-      <find>logo</find>
-      <find>logo.png</find>
-      <find>وض</find>
-      <find>webfont</find>
-      <find>کاربر</find>
       <find>حساب</find>
       <find>profile</find>
       <find>profilePi</find>
@@ -256,6 +264,12 @@
       <find>آخری</find>
       <find>با</find>
       <find>every</find>
+      <find>cropp</find>
+      <find>src=&quot;/img</find>
+      <find>src=&quot;img</find>
+      <find>href=&quot;icons</find>
+      <find>ever</find>
+      <find>vip</find>
     </findStrings>
     <replaceStrings>
       <replace>files/</replace>
@@ -272,14 +286,14 @@
       <replace>href=&quot;icons/</replace>
       <replace>$user</replace>
       <replace>href=&quot;/icons/icons</replace>
-      <replace>src=&quot;/img</replace>
       <replace>quot;/img/</replace>
-      <replace>href=&quot;/icons</replace>
       <replace>$u</replace>
       <replace>auth()-&gt;user</replace>
       <replace>auth()-&gt;user()</replace>
       <replace>href=&quot;/icons/</replace>
+      <replace>src=&quot;/img</replace>
       <replace>src=&quot;/img/</replace>
+      <replace>href=&quot;/icons</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -304,7 +318,6 @@
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/config/cache.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/test.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/Profile/Newsfeed.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PhoneActivationCodeController.php" />
@@ -317,15 +330,12 @@
         <option value="$PROJECT_DIR$/app/Payment.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-Friends.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-financialAffairs.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/public/css/blocks.css" />
         <option value="$PROJECT_DIR$/app/Post.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_23_195805_create_payments_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2018_12_23_193144_create_posts_table.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-About.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-Photos.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/master-Profile.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
@@ -333,12 +343,16 @@
         <option value="$PROJECT_DIR$/resources/views/user/Profile/PersonalInformation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/Notifications.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/FriendsRequests.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PostController.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/Profile/master.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/resources/views/user/Profile/Newsfeed.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/Profile/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-financialAffairs.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PostController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_12_23_193144_create_posts_table.php" />
       </list>
     </option>
   </component>
@@ -455,7 +469,7 @@
       <path value="$PROJECT_DIR$/vendor/torann/geoip" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -565,12 +579,12 @@
       <workItem from="1547447328506" duration="26475000" />
       <workItem from="1547478154353" duration="3478000" />
       <workItem from="1547533944874" duration="62287000" />
-      <workItem from="1547704494190" duration="22343000" />
+      <workItem from="1547704494190" duration="25853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456511000" />
+    <option name="totallyTimeSpent" value="460021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -725,22 +739,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_193144_create_posts_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-financialAffairs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_195805_create_payments_table.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -763,29 +763,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="104" column="60" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/PersonalInformation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/Newsfeed.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/AccountSettings.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -868,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -882,53 +858,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="2019" lean-forward="true" selection-start-line="2019" selection-end-line="2019" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#39553#39558#0#HTML" expanded="true" />
-            <element signature="e#60240#60245#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Youraccount.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master-Profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="104" column="150" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="2039" column="23" selection-start-line="2039" selection-start-column="23" selection-end-line="2039" selection-end-column="23" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#39553#39558#0#HTML" expanded="true" />
+            <element signature="n#header#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#60240#60245#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/ProfilePage-financialAffairs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="67" column="154" selection-start-line="67" selection-start-column="154" selection-end-line="67" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/Profile/Newsfeed.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="405" column="68" selection-start-line="405" selection-start-column="68" selection-end-line="405" selection-end-column="68" />
+          <folding>
+            <element signature="e#153#10157#0#HTML" />
+            <element signature="e#13998#14016#0#HTML" expanded="true" />
+            <element signature="e#15278#15310#0#HTML" expanded="true" />
+            <element signature="e#19126#19133#1#HTML" expanded="true" />
+            <element signature="e#24242#24268#0#HTML" expanded="true" />
+            <element signature="e#28834#40112#0#HTML" />
+            <element signature="e#40265#40776#0#HTML" />
+            <element signature="e#40785#43228#0#HTML" />
+            <element signature="e#42873#42904#0#HTML" expanded="true" />
+            <element signature="e#42964#42994#0#HTML" expanded="true" />
+            <element signature="e#43067#43097#0#HTML" expanded="true" />
+            <element signature="e#43157#43187#0#HTML" expanded="true" />
+            <element signature="e#43259#50494#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_193144_create_posts_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>

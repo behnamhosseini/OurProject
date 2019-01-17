@@ -33,7 +33,7 @@ class PostController extends Controller
         ];
 
         if ($request->postType == "vip"){
-            if (auth()->user()->credet >= 1000){
+            if (auth()->user()->credit >= 1000){
                 $postType="vip";
             }
             else{

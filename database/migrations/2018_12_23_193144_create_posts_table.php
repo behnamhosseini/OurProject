@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('commentCount')->default(0);
             $table->integer('shareCount')->default(0);
             $table->string('postType')->default('post');
+            $table->string('location')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });

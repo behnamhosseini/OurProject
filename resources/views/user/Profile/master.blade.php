@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2021,8 +2019,8 @@
 
 
 
-<script src="js/popper.min.js" ></script>
-<script src="js/bootstrap.min.js" ></script>
+<script src="/js/popper.min.js" ></script>
+<script src="/js/bootstrap.min.js" ></script>
 <script type="text/javascript" src="/js/emojionearea.js"></script>
 <script src="/js/material.min.js"></script>
 <script src="/js/theme-plugins.js"></script>
@@ -2039,6 +2037,7 @@
 <!-- Init functions -->
 <script src="/js/main.js"></script>
 <script src="/js/sweetalert.min.js"></script>
+<script src="/js/swiper.js"></script>
 @include('sweet::alert')
 
 </body>
