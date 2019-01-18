@@ -279,27 +279,13 @@
                             $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
                 } else if (response == 1) {
                             $('#sendFriendRequestButton').css('background-color', '#83f441');
-                            $('#sendFriendRequestButton').attr('title', 'شما هم اکنون دوست هستید');
+                            $('#sendFriendRequestButton').attr('title', 'لغو دوستی با ' + '{{$user->firstName}}');
 
-                } else {
+                }  else if (response == "notFollowed"){
                             $('#sendFriendRequestButton').css('background-color', '#f47142');
-                            $('#sendFriendRequestButton').attr('title', 'درخواست دوستی');
+                            $('#sendFriendRequestButton').attr('title', 'درخواست دوستی با ' + '{{$user->firstName}}');
 
                 }
-
-                // switch (response) {
-                //     case 0:
-                //         //blue
-                //         $('#sendFriendRequestButton').css('background-color', '#009999');
-                //         break;
-                //     case 1:
-                //         //green
-                //         $('#sendFriendRequestButton').css('background-color', '#83f441');
-                //         break;
-                //     default:
-                //         //orange
-                //         $('#sendFriendRequestButton').css('background-color', '#f47142');
-                // }
             });
 
 
@@ -314,8 +300,18 @@
                         _token: '{{ csrf_token() }}'
                     }
 
-                });
+                }).done(function (response) {
 
+                    if (response == "friendRequestDone") {
+                        $('#sendFriendRequestButton').css('background-color', '#009999');
+                        $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
+
+                    } else if (response == "CancelFriendRequestDone") {
+                        $('#sendFriendRequestButton').css('background-color', '#f47142');
+                        $('#sendFriendRequestButton').attr('title', 'درخواست دوستی با ' + '{{$user->firstName}}');
+
+                    }
+                });
             });
 
 

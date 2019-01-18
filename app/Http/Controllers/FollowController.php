@@ -10,6 +10,21 @@ use Lcobucci\JWT\Claim\Validatable;
 
 class FollowController extends Controller
 {
+
+    public function authUser()
+    {
+        return auth()->user()->id;
+    }
+    public function targetUser()
+    {
+        return User::where('userName', request('targetUserName'))->get()->first();
+    }
+    public function followRequest()
+    {
+        return Follow::where('user_id',$this->authUser())->where('target_id',$this->targetUser()->id)->first();
+    }
+
+
     public function sendFriendRequest()
     {
 
@@ -19,16 +34,19 @@ class FollowController extends Controller
 //        return \request();
         // status = 1 means accepted
         // status = 0 means waiting
-        $user = auth()->user()->id;
-        $targetUser = User::where('userName', request('targetUserName'))->get()->first();
-        $status = $targetUser->accountType == 'public' ? 1 : 0;
-        if(!Follow::where('user_id',$user)->where('target_id',$targetUser->id)->first()){
+
+        $status = $this->targetUser()->accountType == 'public' ? 1 : 0;
+        if(!$this->followRequest()){
             Follow::create([
-                'user_id' => $user,
-                'target_id' => $targetUser->id,
+                'user_id' => $this->authUser(),
+                'target_id' => $this->targetUser()->id,
                 'status' => $status
             ]);
-
+            return "friendRequestDone";
+        } else {
+            $follow = $this->followRequest();
+            $follow->delete();
+            return "CancelFriendRequestDone";
         }
     }
 
@@ -37,9 +55,13 @@ class FollowController extends Controller
         Validator::make(\request()->all(),[
             'targetUserName' => 'required|alpha'
         ]);
-        $user = auth()->user()->id;
-        $targetUser = User::where('userName', request('targetUserName'))->get()->first();
-        $status = Follow::where('user_id',$user)->where('target_id',$targetUser->id)->first()->status;
+        if($this->followRequest() != null)
+        {
+            $status = $this->followRequest()->status;
+        } else {
+            $status = "notFollowed";
+        }
+
         return $status;
     }
 }
