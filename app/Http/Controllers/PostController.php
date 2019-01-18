@@ -42,6 +42,7 @@ class PostController extends Controller
             }
         }
         $img=strstr($imageUrl,'/upload');
+
         Validator::make($request->all(),$roll);
         Post::create([
             'user_id' => $request->user_id,
