@@ -358,6 +358,11 @@
 
             <!-- Main Content -->
             <div class="col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12">
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-warning">
+                        {{$error}}
+                    </div>
+                @endforeach
                 @foreach($user->posts->sortBy('created_at') as $post)
                     <div id="newsfeed-items-grid">
 
@@ -528,7 +533,7 @@
 
                     <!-- edit post -->
                         <div class="modal fade " id="editPostModal">
-                            <div class="modal-dialog modal-md">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title" dir="rtl">ویرایش پست</h4>
@@ -536,13 +541,99 @@
                                     <div class="modal-body">
                                         <form id="editPostForm" method="post" action="/editPost/{{$post->id}}">
                                             @csrf
-                                            <h5 class="form-control">تغییرات مورد نظرتو انجام بده و روی دکمه ثبت کلیک کن</h5>
+                                            <div class="tab-content justify-content-between ">
+                                                <div class="tab-pane active " id="home-1" role="tabpanel" aria-expanded="true">
+                                                    <div class="form-group label-floating ">
+                                                        <h5 class="form-control">تغییرات مورد نظرتو انجام بده و روی دکمه ثبت کلیک کن</h5>
 
-                                            <button type="submit" class="form-control btn btn-success">ثبت</button>
-                                        </form>
+                                                        <div class="row justify-content-center">
+                                                                 <div class="col-sm-12 col-md-6 order-md-1 col-lg-4 justify-content-center pl-5">
+                                                                     <div id="upload-demo" style="width:100%"></div>
+                                                                 </div>
+
+                                                                 <div class="col-lg-1 justify-content-center my-auto" >
+                                                                 </div>
+                                                                 <div class="col-sm-6 col-md-12 order-md-3 col-lg-1 justify-content-center my-auto" >
+                                                                     <div class="add-options-message ">
+                                                                         <label for="upload">
+                                                                             <svg class="olymp-camera-icon">
+                                                                                 <use xlink:href="/icons/icons.svg#olymp-camera-icon"></use>
+                                                                             </svg>
+                                                                             <span>انتخاب عکس</span>
+                                                                         </label>
+                                                                     </div>
+                                                                     <input type="file" id="upload" value="انتخاب عکس" class="file" placeholder="انتخاب عکس" style="display: none">
+                                                                 </div>
+                                                                 <div class="col-sm-6 col-md-6 order-md-4 col-lg-2 justify-content-center my-auto" >
+                                                                     <button type="button" id="uploadBtn" class="btn btn-success upload-result mb-1">آپلود -> </button>
+                                                                 </div>
+
+                                                                 <div class="col-sm-12 col-md-6 order-md-2 col-lg-4 justify-content-center my-auto" >
+                                                                     <div id="upload-demo-i" class="content-center my-auto mx-auto" style="width:200px;height:200px"></div>
+                                                                     <input type="hidden" id="postImage" name="imageUrl" value="">
+                                                                 </div>
+                                                         </div>
+
+                                                        <ul class="nav nav-tabs justify-content-between " role="tablist">
+
+
+                                                            <li id="liLocation" class="col-xs-12 col-sm-12 col-md-6 my-auto  ">
+                                                                <span class="small">مکان شما:</span>
+                                                                <span id="spanLocation"  class="small"></span>
+                                                                <input type="hidden" id="Location" name="location" class="small" value="">
+                                                            </li>
+
+                                                            <li>
+                                                                <a class="options-message" data-toggle="tooltip"
+                                                               data-placement="top"
+                                                               data-original-title="افزودن لوکیشن">
+                                                                <svg id="location" class="olymp-small-pin-icon">
+                                                                    <use xlink:href="/icons/icons.svg#olymp-small-pin-icon"></use>
+                                                                </svg>
+                                                            </a>
+                                                            </li>
+                                                            {{--<li class="col-xs-6 col-sm-2 col-md-1 my-auto ">--}}
+                                                                {{--<input type="hidden" value="amo" name="mood" class="small-icon facemocion "/>--}}
+                                                            {{--</li>--}}
+
+
+                                                        </ul>
+                                                        <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
+                                                        <!-- Tab panes -->
+
+                                                        <textarea id="post" name="body" class="form-control" placeholder="">{{$post->body}}</textarea>
+
+                                                        <span class="material-input"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="float-left">
+                                                        <span>مقدار شارژ شما :{{auth()->user()->credit}} تومان</span>
+                                                    </div>
+                                                    @if(auth()->user()->credit >= 1000)
+                                                        <div class="float-right">
+                                                            {{--<label for="#vipType" class="form-control">  داغش کن!</label>--}}
+                                                            <input  id="vipType" type="radio" name="postType" value="vip"><h4>داغش کن!</h4>
+                                                        </div>
+                                                    @else
+                                                        <a href="/ProfilePageFinancialAffairs/{{auth()->user()->userName}}"class="btn btn-danger">افزایش شارژ</a>
+                                                    @endif()
+                                                </div>
+                                            </div>
+
+
+
                                     </div>
                                     <div class="modal-footer justify-content-around">
+                                        <button type="submit" class="form-control btn btn-success">ثبت</button>
                                         <button type="button" class="form-control btn btn-warning" data-dismiss="modal">خروج</button>
+                                        </form>
+                                        <script>
+                                            $("#uploadBtn").click(function () {
+                                                $("#close").text('انتخاب شد');
+                                            })
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -594,6 +685,7 @@
                         </div>
                     @endif
                 @endif
+
             </div>
             <!-- ... end Main Content -->
 

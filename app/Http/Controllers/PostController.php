@@ -58,17 +58,32 @@ class PostController extends Controller
     }
     public function editPost(Post $post)
     {
-        $this->validate(\request(), [
-            'body' => 'required|string',
-            'imageUrl' => 'required' ,
-            'mood' => 'required|string' ,
-            'location' => 'required'
+        $validator = Validator::make(\request()->all(), [
+            "user_id" => "required|numeric",
+            "body" =>  "required|min:1|max:5000",
+            "mood" =>  "alpha|max:10",
+            "location" =>"string|max:30"
         ]);
+        if ($validator->fails()) {
+            alert()->warning('توی وارد کردن اطلاعات دقت کن')->persistent('فهمیدم');
+            return back()->withErrors($validator);
+        }
+
+        $postType = "post";
+        if (request('postType') == "vip"){
+            if (auth()->user()->credit >= 1000){
+                $postType="vip";
+            }
+            else{
+                alert()->success('خر خودتی!')->persistent('فهمیدی؟');
+                return back();
+            }
+        }
         $post->update([
-            'body' => \request('body'),
+            'body' => request('body'),
             'imageUrl' => request('imageUrl'),
-            'mood' => request('mood') ,
-            'location' => request('location')
+            'location' => request('location'),
+            'postType' => $postType
         ]);
         $title = " عزیز!" . $post->user->firstName;
         alert()->success('پست مورد نظر با موفقیت ویرایش شد', $title)->persistent('اوکی');
