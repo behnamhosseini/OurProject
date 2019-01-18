@@ -48,6 +48,8 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/uploadFriendsImage','UserController@uploadFriendsImage')->name('uploadFriendsImage');
     $this->post('/uploadRelativesImage','UserController@uploadRelativesImage')->name('uploadRelativesImage');
     $this->post('/chargeYourAccount','UserController@chargeYourAccount')->name('chargeYourAccount');
+    $this->post('/sendFriendRequest','FollowController@sendFriendRequest')->name('sendFriendRequest');
+    $this->post('/checkFollowStatus','FollowController@checkFollowStatus')->name('checkFollowStatus');
     Route::post('/ip','UserController@ip');
 
 });

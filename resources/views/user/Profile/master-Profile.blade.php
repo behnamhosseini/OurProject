@@ -55,7 +55,7 @@
                             </div>
 
                             <div class="control-block-button">
-                                <a href="35-YourAccount-FriendsRequests.html" class="btn btn-control bg-blue" data-toggle="tooltip" title="درخواست دوستی">
+                                <a style="background-color: white" id="sendFriendRequestButton" class="btn btn-control bg-blue" data-toggle="" title="">
                                     <svg class="olymp-happy-face-icon">
                                         <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
                                     </svg>
@@ -263,7 +263,63 @@
     </div>
 
     <script>
+
         $(function() {
+            $.ajax({
+                type: 'POST',
+                url: '/checkFollowStatus',
+                data: {
+                    targetUserName:'{{$user->userName}}',
+                    _token: '{{ csrf_token() }}'
+                }
+
+            }).done(function (response) {
+                if(response == 0) {
+                            $('#sendFriendRequestButton').css('background-color', '#009999');
+                            $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
+                } else if (response == 1) {
+                            $('#sendFriendRequestButton').css('background-color', '#83f441');
+                            $('#sendFriendRequestButton').attr('title', 'شما هم اکنون دوست هستید');
+
+                } else {
+                            $('#sendFriendRequestButton').css('background-color', '#f47142');
+                            $('#sendFriendRequestButton').attr('title', 'درخواست دوستی');
+
+                }
+
+                // switch (response) {
+                //     case 0:
+                //         //blue
+                //         $('#sendFriendRequestButton').css('background-color', '#009999');
+                //         break;
+                //     case 1:
+                //         //green
+                //         $('#sendFriendRequestButton').css('background-color', '#83f441');
+                //         break;
+                //     default:
+                //         //orange
+                //         $('#sendFriendRequestButton').css('background-color', '#f47142');
+                // }
+            });
+
+
+
+            $("#sendFriendRequestButton").click(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/sendFriendRequest',
+                    data: {
+                        targetUserName:'{{$user->userName}}',
+                        _token: '{{ csrf_token() }}'
+                    }
+
+                });
+
+            });
+
+
+
             $("#headerImageUpload").on("change", function()
             {
                 var files = !!this.files ? this.files : [];
@@ -439,7 +495,7 @@
                 }).done(function(){
                     window.location.reload(true);
                 });
-            })
+            });
 
         });
     </script>
