@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery-3.3.1.js"></script>
 
 
     <!-- Bootstrap CSS -->
