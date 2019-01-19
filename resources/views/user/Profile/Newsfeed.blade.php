@@ -427,19 +427,19 @@
         @endauth()
 
         <!--End send post-->
-
+@foreach($posts as $post)
             <div id="newsfeed-items-grid">
                 <div class="ui-block">
                     <article class="hentry post has-post-thumbnail" >
 
                         <div class="post__author author vcard inline-items">
-                            <img src="" alt="author">
+                            <img src="{{$post->user->profilePictures['everyOne']}}" alt="author">
 
                             <div class="author-date">
-                                <a class="h6 post__author-name fn" href="#">فائزه اسحاقی</a>
+                                <a class="h6 post__author-name fn" href="/ProfilePage/{{$post->user->userName}}">{{$post->user->fullName()}}</a>
                                 <div class="post__date">
                                     <time class="published" datetime="2004-07-24T18:18">
-                                        15 اردیبهشت 1397
+                                        {{$post->created_at->diffForHumans()}}
                                     </time>
                                 </div>
                             </div>
@@ -469,7 +469,7 @@
                         <p></p>
 
                         <div class="post-thumb">
-                            <img src=""  alt="photo" style="position: relative">
+                            <img src="{{$post->imageUrl}}" style="position: relative">
                         </div>
 
                         <div class="post-additional-info inline-items">
@@ -478,7 +478,7 @@
                                 <svg class="olymp-heart-icon">
                                     <use xlink:href="/icons/icons.svg#olymp-heart-icon"></use>
                                 </svg>
-                                <span>49</span>
+                                <span>{{$post->likeCount}}</span>
                             </a>
 
                             <ul class="friends-harmonic">
@@ -487,32 +487,12 @@
                                         <img src="/img/friend-harmonic9.jpg" alt="friend">
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/img/friend-harmonic10.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/img/friend-harmonic7.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/img/friend-harmonic8.jpg" alt="friend">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/img/friend-harmonic11.jpg" alt="friend">
-                                    </a>
-                                </li>
                             </ul>
 
                             <div class="names-people-likes">
                                 <a href="#">جیمی</a>,
                                 <a href="#">ملانی</a> و
-                                <br>47 کاربر این پست را پسندیدند
+                                <br>{{$post->likeCount}} کاربر این پست را پسندیدند
                             </div>
 
 
@@ -521,14 +501,14 @@
                                     <svg class="olymp-speech-balloon-icon">
                                         <use xlink:href="/icons/icons.svg#olymp-speech-balloon-icon"></use>
                                     </svg>
-                                    <span>264</span>
+                                    <span>{{$post->commentCount}}</span>
                                 </a>
 
                                 <a href="#" class="post-add-icon inline-items">
                                     <svg class="olymp-share-icon">
                                         <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
                                     </svg>
-                                    <span>37</span>
+                                    <span>{{$post->shareCount}}</span>
                                 </a>
                             </div>
 
@@ -561,7 +541,7 @@
                 </div>
 
             </div>
-
+@endforeach()
             <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html"
                data-container="newsfeed-items-grid">
                 <svg class="olymp-three-dots-icon">
