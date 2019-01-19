@@ -449,12 +449,15 @@
                                     <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                                 </svg>
                                 <ul class="more-dropdown">
+                                    @if($post->user->id == auth()->user()->id)
                                     <li>
                                         <a href="#">ویرایش پست</a>
                                     </li>
+
                                     <li>
                                         <a href="#">حذف</a>
                                     </li>
+                                    @endif()
                                     <li>
                                         <a href="#">خاموش کردن اطلاعیه ها</a>
                                     </li>
@@ -466,16 +469,15 @@
 
                         </div>
 
-                        <p></p>
+                        <p>{{$post->body}}</p>
 
                         <div class="post-thumb">
                             <img src="{{$post->imageUrl}}" style="position: relative">
                         </div>
 
                         <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
+                            <a class="post-add-icon inline-items" >
+                                <svg id="like" class="olymp-heart-icon" >
                                     <use xlink:href="/icons/icons.svg#olymp-heart-icon"></use>
                                 </svg>
                                 <span>{{$post->likeCount}}</span>
@@ -494,6 +496,7 @@
                                 <a href="#">ملانی</a> و
                                 <br>{{$post->likeCount}} کاربر این پست را پسندیدند
                             </div>
+
 
 
                             <div class="comments-shared">
@@ -540,7 +543,22 @@
                     </article>
                 </div>
 
-            </div>
+
+                <script>
+                    $("#like").click(function () {
+                        $.ajax({
+                            method : 'post',
+                            url : '/likePost',
+                            data : {
+                                post_id : '{{$post->id}}',
+                                functur : '{{auth()->user()->id}}',
+                                post_user_id : '{{$post->user->id}}',
+                                _token: '{{csrf_token()}}'
+
+                            }
+                        });
+                    })
+                </script>
 @endforeach()
             <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html"
                data-container="newsfeed-items-grid">

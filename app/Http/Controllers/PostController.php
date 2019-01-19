@@ -12,18 +12,20 @@ class PostController extends Controller
 
     public function sendPost(Request $request)
     {
-        $data = $request->imageUrl;
-        list($type, $data) = explode(';', $data);
-        list(, $data)      = explode(',', $data);
+        $imageUrl="";
+        if($request->imageUrl) {
+            $data = $request->imageUrl;
+            list($type, $data) = explode(';', $data);
+            list(, $data) = explode(',', $data);
 
-        $data = base64_decode($data);
-        $image_name= time().'.png';
-        if(!file_exists(public_path() . "/uploads/".auth()->user()->userName."/post-image/"))
-        {
-            mkdir(public_path() . "/uploads/".auth()->user()->userName."/post-image/",0755,true);
+            $data = base64_decode($data);
+            $image_name = time() . '.png';
+            if (!file_exists(public_path() . "/uploads/" . auth()->user()->userName . "/post-image/")) {
+                mkdir(public_path() . "/uploads/" . auth()->user()->userName . "/post-image/", 0755, true);
+            }
+            $imageUrl = public_path() . "/uploads/" . auth()->user()->userName . "/post-image/" . $image_name;
+            file_put_contents($imageUrl, $data);
         }
-        $imageUrl= public_path() . "/uploads/".auth()->user()->userName."/post-image/". $image_name;
-        file_put_contents($imageUrl , $data);
         $postType="post";
         $roll=[
             "user_id" => "required|numeric",
@@ -41,7 +43,11 @@ class PostController extends Controller
                 return back();
             }
         }
-        $img=strstr($imageUrl,'/upload');
+        if(!$imageUrl==""){
+            $img=strstr($imageUrl,'/upload');
+        }else{
+            $img=null;
+        }
 
         Validator::make($request->all(),$roll);
         Post::create([
@@ -96,5 +102,17 @@ class PostController extends Controller
         $title = " عزیز!" . $post->user->firstName;
         alert()->success('پست مورد نظر با موفقیت حذف شد', $title )->persistent('اوکی');
         return back();
+    }
+
+    public function likePost(Request $request)
+    {
+
+        $like=[
+            "counte" => 0,
+            "user_id" => [],
+        ];
+
+
+
     }
 }

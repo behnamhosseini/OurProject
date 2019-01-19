@@ -52,6 +52,7 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/sendFriendRequest','FollowController@sendFriendRequest')->name('sendFriendRequest');
     $this->post('/checkFollowStatus','FollowController@checkFollowStatus')->name('checkFollowStatus');
     Route::post('/ip','UserController@ip');
+    Route::post('/likePost','PostController@likePost');
 
 });
 

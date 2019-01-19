@@ -56,7 +56,7 @@
 
                             <div class="control-block-button">
                                 @if(auth()->user()->id != $user->id)
-                                    <a style="background-color: white" id="sendFriendRequestButton" class="btn btn-control bg-blue" data-toggle="" title="">
+                                    <a style="background-color: white" class="btn btn-control bg-blue sendFriendRequestButton" data-toggle="" title="">
                                         <svg class="olymp-happy-face-icon">
                                             <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
                                         </svg>
@@ -268,58 +268,6 @@
     <script>
 
         $(function() {
-            $.ajax({
-                type: 'POST',
-                url: '/checkFollowStatus',
-                data: {
-                    targetUserName:'{{$user->userName}}',
-                    _token: '{{ csrf_token() }}'
-                }
-
-            }).done(function (response) {
-                if(response == 0) {
-                            $('#sendFriendRequestButton').css('background-color', '#009999');
-                            $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
-                } else if (response == 1) {
-                            $('#sendFriendRequestButton').css('background-color', '#83f441');
-                            $('#sendFriendRequestButton').attr('title', 'لغو دوستی با ' + '{{$user->firstName}}');
-
-                }  else if (response == "notFollowed"){
-                            $('#sendFriendRequestButton').css('background-color', '#f47142');
-                            $('#sendFriendRequestButton').attr('title', 'درخواست دوستی با ' + '{{$user->firstName}}');
-
-                }
-            });
-
-
-
-            $("#sendFriendRequestButton").click(function(e){
-                e.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: '/sendFriendRequest',
-                    data: {
-                        targetUserName:'{{$user->userName}}',
-                        _token: '{{ csrf_token() }}'
-                    }
-
-                }).done(function (response) {
-
-                    if (response == "friendRequestDonePrivate") {
-                        $('#sendFriendRequestButton').css('background-color', '#009999');
-                        $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
-
-                    }if (response == "friendRequestDonePublic") {
-                        $('#sendFriendRequestButton').css('background-color', '#83f441');
-                        $('#sendFriendRequestButton').attr('title', 'لغو دوستی با ' + '{{$user->firstName}}');
-
-                    } else if (response == "CancelFriendRequestDone") {
-                        $('#sendFriendRequestButton').css('background-color', '#f47142');
-                        $('#sendFriendRequestButton').attr('title', 'درخواست دوستی با ' + '{{$user->firstName}}');
-
-                    }
-                });
-            });
 
 
 
@@ -502,6 +450,7 @@
 
         });
     </script>
+
 @endsection
 @section('content')
     @yield('content')
