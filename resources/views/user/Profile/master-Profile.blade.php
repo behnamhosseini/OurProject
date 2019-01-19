@@ -55,17 +55,20 @@
                             </div>
 
                             <div class="control-block-button">
-                                <a style="background-color: white" id="sendFriendRequestButton" class="btn btn-control bg-blue" data-toggle="" title="">
-                                    <svg class="olymp-happy-face-icon">
-                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-                                    </svg>
-                                </a>
+                                @if(auth()->user()->id != $user->id)
+                                    <a style="background-color: white" id="sendFriendRequestButton" class="btn btn-control bg-blue" data-toggle="" title="">
+                                        <svg class="olymp-happy-face-icon">
+                                            <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-control bg-purple" data-toggle="tooltip" title="ارسال پیام">
+                                        <svg class="olymp-chat---messages-icon">
+                                            <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
+                                        </svg>
+                                    </a>
 
-                                <a href="#" class="btn btn-control bg-purple" data-toggle="tooltip" title="ارسال پیام">
-                                    <svg class="olymp-chat---messages-icon">
-                                        <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
-                                    </svg>
-                                </a>
+                                @endif
+
 
                                 @if($user->id == auth()->user()->id)
                                     <div class="btn btn-control bg-primary more">
@@ -302,9 +305,13 @@
 
                 }).done(function (response) {
 
-                    if (response == "friendRequestDone") {
+                    if (response == "friendRequestDonePrivate") {
                         $('#sendFriendRequestButton').css('background-color', '#009999');
                         $('#sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
+
+                    }if (response == "friendRequestDonePublic") {
+                        $('#sendFriendRequestButton').css('background-color', '#83f441');
+                        $('#sendFriendRequestButton').attr('title', 'لغو دوستی با ' + '{{$user->firstName}}');
 
                     } else if (response == "CancelFriendRequestDone") {
                         $('#sendFriendRequestButton').css('background-color', '#f47142');

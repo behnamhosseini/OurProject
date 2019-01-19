@@ -36,17 +36,25 @@ class FollowController extends Controller
         // status = 0 means waiting
 
         $status = $this->targetUser()->accountType == 'public' ? 1 : 0;
-        if(!$this->followRequest()){
-            Follow::create([
-                'user_id' => $this->authUser(),
-                'target_id' => $this->targetUser()->id,
-                'status' => $status
-            ]);
-            return "friendRequestDone";
-        } else {
-            $follow = $this->followRequest();
-            $follow->delete();
-            return "CancelFriendRequestDone";
+        if($this->authUser() != $this->targetUser()->id)
+        {
+            if(!$this->followRequest()){
+                Follow::create([
+                    'user_id' => $this->authUser(),
+                    'target_id' => $this->targetUser()->id,
+                    'status' => $status
+                ]);
+                if($this->targetUser()->accountType == 'private')
+                {
+                    return "friendRequestDonePrivate";
+                } else {
+                    return "friendRequestDonePublic";
+                }
+            } else {
+                $follow = $this->followRequest();
+                $follow->delete();
+                return "CancelFriendRequestDone";
+            }
         }
     }
 

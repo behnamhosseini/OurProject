@@ -698,14 +698,26 @@
                         <h6 class="title">آخرین تصاویر</h6>
                     </div>
                     <div class="ui-block-content">
-                        <ul class="widget w-last-photo js-zoom-gallery">
-                            @foreach($user->posts as $post)
-                                <li>
+                        @if($user->posts()->get()->first() != null)
+                            <ul class="widget w-last-photo js-zoom-gallery">
+                                @foreach($user->posts as $post)
+                                    <li>
                                         <img src="{{$post->imageUrl}}" alt="photo">
-                                </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
 
-                        </ul>
+                            </ul>
+                        @else
+                            @if(auth()->user()->id != $user->id)
+                                <div class="col-12">
+                                    <small>{{$user->firstName}} در حال حاضر عکسی ارسال نکرده است!</small>
+                                </div>
+                            @else
+                                <div class="col-12">
+                                    <span>تو هنوز عکسی ارسال نکردی!</span><br>
+                                </div>
+                            @endif
+                        @endif
                     </div>
                 </div>
 
@@ -753,76 +765,13 @@
                     </div>
                     <div class="ui-block-content">
                         <ul class="widget w-faved-page js-zoom-gallery">
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar38-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar24-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar36-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar35-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar34-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar33-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar32-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar31-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar30-sm.jpg" alt="author">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar29-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar28-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar27-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar26-sm.jpg" alt="user">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="/img/avatar25-sm.jpg" alt="user">
-                                </a>
-                            </li>
+{{--                            @foreach($friends as $friend)--}}
+                                <li>
+                                    <a href="#">
+                                        <img src="#" alt="author">
+                                    </a>
+                                </li>
+                            {{--@endforeach--}}
                             <li class="all-users">
                                 <a href="#">+74</a>
                             </li>

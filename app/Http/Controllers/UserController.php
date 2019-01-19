@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Follow;
 use App\PhoneActivationCode;
 use App\User;
 use Carbon\Carbon;
@@ -34,6 +35,7 @@ class UserController extends Controller
 
     public function profilePage(User $user)
     {
+//        $friends = Follow::where('user_id', $user)->orWhere('target_id', $user->id)->where('status', 1)->get();
         return view('user.Profile.ProfilePage', compact('user'));
     }
 

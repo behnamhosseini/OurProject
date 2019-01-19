@@ -1,5 +1,6 @@
 <?php
 
+use App\Follow;
 use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
@@ -62,7 +63,6 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-
 
 })->name('test');
 
