@@ -1687,9 +1687,9 @@ fieldset[disabled] .checkbox input[type=checkbox],
 
 .friend-avatar .author-thumb {
     margin: 0 auto;
-    height: 98px;
-    width: 98px;
-    margin-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
     /*border-radius: 50%;*/
 }
 

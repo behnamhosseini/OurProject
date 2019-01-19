@@ -721,6 +721,69 @@
                     </div>
                 </div>
 
+
+                @if($user->accountType == 'public')
+                    <div class="ui-block">
+                        <div class="ui-block-title">
+                            <h6 class="title">دنبال شده ها ({{$followings->count()}})</h6>
+                        </div>
+                        <div class="ui-block-content">
+                            <ul class="widget w-faved-page js-zoom-gallery">
+                                @if($followings->isEmpty())
+                                    @if(auth()->user()->id == $user->id)
+                                        <small>تو فعلا کسی رو دنبال نکردی!</small><br>
+                                        <small>میتونی با جست و جو  دوستاتو پیدت کنی!</small>
+                                    @else
+                                        <small>{{$user->firstName}} فعلا کسی رو دنبال نکرده!</small>
+                                    @endif
+
+                                @else
+                                    @foreach($followings as $followingId)
+                                        <?php $friendUser = \App\User::where('id', $followingId->target_id)->get()->first() ?>
+                                        <li>
+                                            {{--<a href="/ProfilePage/{{$friendUser->userName}}">--}}
+                                                <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
+                                            {{--</a>--}}
+                                        </li>
+                                    @endforeach
+                                @endif
+                                {{--<li class="all-users">--}}
+                                {{--<a href="#">+74</a>--}}
+                                {{--</li>--}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ui-block">
+                        <div class="ui-block-title">
+                            <h6 class="title">دنبال کننده ها ({{$followers->count()}})</h6>
+                        </div>
+                        <div class="ui-block-content">
+                            <ul class="widget w-faved-page js-zoom-gallery">
+                                @if($followers->isEmpty())
+                                    @if(auth()->user()->id == $user->id)
+                                        <small>تو فعلا دنبال کننده ای نداری!</small><br>
+                                    @else
+                                        <small>{{$user->firstName}} فعلا دنبال کننده ای ندارد!</small>
+                                    @endif
+
+                                @else
+                                    @foreach($followers as $followerId)
+                                        <?php $friendUser = \App\User::where('id', $followerId->user_id)->get()->first() ?>
+                                        <li>
+                                            {{--<a href="/ProfilePage/{{$friendUser->userName}}">--}}
+                                                <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
+                                            {{--</a>--}}
+                                        </li>
+                                    @endforeach
+                                @endif
+                                {{--<li class="all-users">--}}
+                                {{--<a href="#">+74</a>--}}
+                                {{--</li>--}}
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="ui-block">
                     <div class="ui-block-title">
                         <h6 class="title">مجله</h6>
@@ -757,26 +820,6 @@
                             </article>
                         </li>
                     </ul>
-                </div>
-
-                <div class="ui-block">
-                    <div class="ui-block-title">
-                        <h6 class="title">دوستان (86)</h6>
-                    </div>
-                    <div class="ui-block-content">
-                        <ul class="widget w-faved-page js-zoom-gallery">
-{{--                            @foreach($friends as $friend)--}}
-                                <li>
-                                    <a href="#">
-                                        <img src="#" alt="author">
-                                    </a>
-                                </li>
-                            {{--@endforeach--}}
-                            <li class="all-users">
-                                <a href="#">+74</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div class="ui-block">

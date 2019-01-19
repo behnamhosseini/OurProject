@@ -24,136 +24,148 @@
 
 @section('content3')
     <div class="row">
-        @foreach(\App\User::all() as $u)
-           @if($u->id != $user->id)
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="ui-block">
-                        <div class="friend-item">
-                            <div class="friend-header-thumb">
-                                <img src="{{$u->profilePictures['header'] != null ? $u->profilePictures['header'] : '/img/top-header7.png'}}" alt="friend">
-                            </div>
+        <h3 class="col-12 text-info">دنبال شده توسط {{$user->firstName}}</h3>
+            @if($followings->isEmpty())
+                @if(auth()->user()->id == $user->id)
+                    <div class="col-12">
 
-                            <div class="friend-item-content">
+                        <small>تو فعلا کسی رو دنبال نکردی!</small><br>
+                        <small>میتونی با جست و جو  دوستاتو پیدا کنی!</small>
+                    </div>
+                @else
+                    <div class="col-12">
+                        <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
+                    </div>
+                @endif
 
-                                    <div class="more">
-                                        <svg class="olymp-three-dots-icon">
-                                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
-                                        </svg>
-                                        <ul class="more-dropdown">
-                                            <li>
-                                                <a href="#">گزارش دادن پروفایل </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">باک کردن پروفایل </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">خاموش کردن اطلاعیه ها </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="friend-avatar">
-                                    <div class="author-thumb">
-                                        <img src="{{$u->profilePictures['everyOne']}}" alt="author">
-                                    </div>
-                                    <div class="author-content">
-                                        <a href="#" class="h5 author-name">{{$u->fullName()}} </a>
-                                        <div class="country">{{$u->province}} - {{$u->city}} </div>
-                                    </div>
+            @else
+                @foreach($followings as $following)
+                    <?php $friendUser = \App\User::where('id', $following->target_id)->get()->first() ?>
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                        <div class="ui-block">
+                            <div class="friend-item">
+                                <div class="friend-header-thumb">
+                                    <img src="{{$friendUser->profilePictures['header'] != null ? $friendUser->profilePictures['header'] : '/img/top-header7.png'}}" alt="friend">
                                 </div>
 
-                                <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
-                                    <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 196px;">
-                                            <p class="friend-about">
-                                                {{$u->bio}}
-                                            </p>
+                                <div class="friend-item-content">
 
-                                            <div class="friend-since">
-                                                <span>شروع وستی از :</span>
-                                                <div class="h6">مهر 2014</div>
-                                            </div>
+                                    <div class="friend-avatar">
+                                        <div class="author-thumb">
+                                            <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
                                         </div>
-                                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
-                                            <div class="friend-count">
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">52</div>
-                                                    <div class="title">دوستان</div>
-                                                </a>
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">240</div>
-                                                    <div class="title">تصاویر </div>
-                                                </a>
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">16</div>
-                                                    <div class="title">ویدئو </div>
-                                                </a>
-                                            </div>
-                                            <div class="control-block-button">
-                                                <a href="#" class="btn btn-control bg-blue">
-                                                    <svg class="olymp-happy-face-icon">
-                                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-                                                    </svg>
-                                                </a>
+                                        <div class="author-content">
+                                            <a href="#" class="h5 author-name">{{$friendUser->fullName()}} </a>
+                                            <div class="country">{{$friendUser->province}} - {{$friendUser->city}} </div>
+                                        </div>
+                                    </div>
 
-                                                <a href="#" class="btn btn-control bg-purple">
-                                                    <svg class="olymp-chat---messages-icon">
-                                                        <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
-                                                    </svg>
-                                                </a>
+                                    <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
+                                        <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
+                                            @if($user->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
 
-                                            </div>
+                                            @else
+                                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+                                                    <div class="control-block-button">
+                                                        <a href="#" style="background-color: white" class="btn btn-control bg-blue sendFriendRequestButton">
+                                                            <svg class="olymp-happy-face-icon " style="width: 20px; height: 20px">
+                                                                <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                                            </svg>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
+                                                    <a href="#" class="btn btn-control bg-purple">
+                                                        <svg class="olymp-chat---messages-icon">
+                                                            <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            @endif
+
                                         </div>
 
-                                        <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
-                                            <p class="friend-about">
-                                                {{$u->bio}}
-                                            </p>
-
-                                            <div class="friend-since">
-                                                <span>شروع وستی از :</span>
-                                                <div class="h6">مهر 2014</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 196px;">
-                                            <div class="friend-count">
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">52</div>
-                                                    <div class="title">دوستان</div>
-                                                </a>
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">240</div>
-                                                    <div class="title">تصاویر </div>
-                                                </a>
-                                                <a href="#" class="friend-count-item">
-                                                    <div class="h6">16</div>
-                                                    <div class="title">ویدئو </div>
-                                                </a>
-                                            </div>
-                                            <div class="control-block-button">
-                                                <a href="#" class="btn btn-control bg-blue">
-                                                    <svg class="olymp-happy-face-icon">
-                                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-                                                    </svg>
-                                                </a>
-
-                                                <a href="#" class="btn btn-control bg-purple">
-                                                    <svg class="olymp-chat---messages-icon">
-                                                        <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
-                                                    </svg>
-                                                </a>
-
-                                            </div>
-                                        </div></div>
-
-                                    <!-- If we need pagination -->
-                                    <div class="swiper-pagination pagination-swiper-unique-id-0 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span></div>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                @endforeach
             @endif
-        @endforeach
+        <br><hr>
+        <h3 class="col-12 text-success">دنبال کننده های {{$user->firstName}}</h3>
+            @if($followers->isEmpty())
+                @if(auth()->user()->id == $user->id)
+                    <div class="col-12">
+
+                        <span class="pb-3"> فعلا کسی تو رو دنبال نکرده!</span><br>
+                    </div>
+                @else
+                    <div class="col-12">
+                        <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
+                    </div>
+                @endif
+
+            @else
+                @foreach($followers as $follower)
+                    <?php $friendUser = \App\User::where('id', $follower->user_id)->get()->first() ?>
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                        <div class="ui-block">
+                            <div class="friend-item">
+                                <div class="friend-header-thumb">
+                                    <img src="{{$friendUser->profilePictures['header'] != null ? $friendUser->profilePictures['header'] : '/img/top-header7.png'}}" alt="friend">
+                                </div>
+
+                                <div class="friend-item-content">
+
+                                    <div class="friend-avatar">
+                                        <div class="author-thumb">
+                                            <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
+                                        </div>
+                                        <div class="author-content">
+                                            <a href="#" class="h5 author-name">{{$friendUser->fullName()}} </a>
+                                            <div class="country">{{$friendUser->province}} - {{$friendUser->city}} </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
+                                        <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
+                                            @if($friendUser->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
+
+                                            @else
+                                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+                                                    <div class="control-block-button">
+                                                        <a href="#" class="btn btn-control bg-blue sendFriendRequestButton">
+                                                            <svg class="olymp-happy-face-icon" style="width: 20px; height: 20px">
+                                                                <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                                            </svg>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
+                                                    <a href="#" class="btn btn-control bg-purple">
+                                                        <svg class="olymp-chat---messages-icon">
+                                                            <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+            @endif
+
     </div>
 @endsection
 

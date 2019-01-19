@@ -37,8 +37,10 @@ class UserController extends Controller
 
     public function profilePage(User $user)
     {
-//        $friends = Follow::where('user_id', $user)->orWhere('target_id', $user->id)->where('status', 1)->get();
-        return view('user.Profile.ProfilePage', compact('user'));
+        $followings = Follow::where('user_id', $user->id)->where('status', 1)->get();
+        $followers = Follow::where('target_id', $user->id)->where('status', 1)->get();
+//        return $followings;
+        return view('user.Profile.ProfilePage', compact('user', 'followers', 'followings'));
     }
 
     public function profilePageAbout(User $user)
@@ -61,7 +63,9 @@ class UserController extends Controller
     }
    public function profilePageFriends(User $user)
     {
-        return view('user.Profile.ProfilePage-Friends', compact('user'));
+        $followings = Follow::where('user_id', $user->id)->where('status', 1)->get();
+        $followers = Follow::where('target_id', $user->id)->where('status', 1)->get();
+        return view('user.Profile.ProfilePage-Friends', compact('user', 'followers', 'followings'));
     }
    public function ProfilePageBlogPosts(User $user)
     {

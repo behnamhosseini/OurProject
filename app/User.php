@@ -59,8 +59,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Payment::class);
     }
+
     public function fullName()
     {
          return $this->firstName . ' ' . $this->lastName;
+    }
+    public static function checkFollowing($targetUserId)
+    {
+        $f = Follow::where('user_id', auth()->user()->id)->where('target_id', $targetUserId)->where('status', 1)->get()->all();
+        if(empty($f))
+            return false;
+        else
+            return true;
     }
 }
