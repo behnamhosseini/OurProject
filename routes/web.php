@@ -66,9 +66,7 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-    $a = "button-2";
-    return $a;
-    return str_replace('-', '',$a);
+    return \App\User::get()->pluck('id');
 })->name('test');
 
 
