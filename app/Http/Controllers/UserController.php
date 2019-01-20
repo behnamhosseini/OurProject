@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Follow;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\PhoneActivationCode;
+use App\Post;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -219,8 +221,24 @@ class UserController extends Controller
 
     public function Newsfeed()
     {
+        $user = auth()->user()->id;
+        $friends = Follow::whereUser_id($user)->whereStatus(1)->get()->pluck('target_id');
+        $friends[]=auth()->user()->id;
+        foreach ($friends as $friend) {
+            $select[] = Post::whereUser_id($friend)->with('user')->get();
+        }
+     $posts=[];
+        foreach ($select as $item) {
+            $count = count($item)-1;
+            for($i=0;$i<=$count;$i++){
+                $posts[]=$item[$i];
+            }
 
-        return view('user.Profile.Newsfeed');
+        }
+
+        $posts=array_sort_recursive($posts);
+
+        return view('user.Profile.Newsfeed',compact('posts'));
     }
 
     public function logout()
