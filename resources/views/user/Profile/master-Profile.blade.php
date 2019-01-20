@@ -267,6 +267,39 @@
 
     <script>
 
+
+        function sendFollowRequest(event)
+        {
+            event.preventDefault();
+            let targetUserName = event.target.id;
+            $.ajax({
+                type: 'POST',
+                url: '/sendFollowRequest',
+                data: {
+                    targetUserName: targetUserName,
+                    _token: '{{ csrf_token() }}'
+                }
+
+            }).done(function (response) {
+
+                if (response == "friendRequestDonePrivate") {
+                    $(`#${targetUserName}`).css('background-color', '#009999');
+                    $(`#${targetUserName}`).attr('title', 'درخواست دنبال کردن ارسال شد');
+
+                } else if (response == "friendRequestDonePublic") {
+                    $(`#${targetUserName}`).css('background-color', '#83f441');
+                    $(`#${targetUserName}`).attr('title', 'لغو دنبال کردن ' );
+
+                } else if (response == "CancelFriendRequestDone") {
+                    $(`#${targetUserName}`).css('background-color', '#f47142');
+                    $(`#${targetUserName}`).attr('title', ' دنبال کردن ');
+
+                }
+            });
+
+        };
+
+
         $(function() {
 
             $.ajax({
@@ -298,7 +331,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: 'POST',
-                    url: '/sendFriendRequest',
+                    url: '/sendFollowRequest',
                     data: {
                         targetUserName:'{{$user->userName}}',
                         _token: '{{ csrf_token() }}'

@@ -49,7 +49,7 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/uploadFriendsImage','UserController@uploadFriendsImage')->name('uploadFriendsImage');
     $this->post('/uploadRelativesImage','UserController@uploadRelativesImage')->name('uploadRelativesImage');
     $this->post('/chargeYourAccount','UserController@chargeYourAccount')->name('chargeYourAccount');
-    $this->post('/sendFriendRequest','FollowController@sendFriendRequest')->name('sendFriendRequest');
+    $this->post('/sendFollowRequest','FollowController@sendFollowRequest')->name('sendFollowRequest');
     $this->post('/checkFollowStatus','FollowController@checkFollowStatus')->name('checkFollowStatus');
     $this->post('/acceptFollowRequest','FollowController@acceptFollowRequest')->name('acceptFollowRequest');
     $this->post('/denyFollowRequest','FollowController@denyFollowRequest')->name('denyFollowRequest');
