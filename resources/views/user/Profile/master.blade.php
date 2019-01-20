@@ -1913,58 +1913,6 @@
 </script>
 <script>
     $(document).ready(function(){
-        $.ajax({
-            type: 'POST',
-            url: '/checkFollowStatus',
-            data: {
-                targetUserName:'{{$user->userName}}',
-                _token: '{{ csrf_token() }}'
-            }
-
-        }).done(function (response) {
-            if(response == 0) {
-                $('.sendFriendRequestButton').css('background-color', '#009999');
-                $('.sendFriendRequestButton').attr('title', 'درخواست ارسال شد');
-            } else if (response == 1) {
-                $('.sendFriendRequestButton').css('background-color', '#83f441');
-                $('.sendFriendRequestButton').attr('title', 'لغو دنبال کردن ' + '{{$user->firstName}}');
-
-            }  else if (response == "notFollowed"){
-                $('.sendFriendRequestButton').css('background-color', '#f47142');
-                $('.sendFriendRequestButton').attr('title', 'دنبال کردن ' + '{{$user->firstName}}');
-
-            }
-        });
-
-
-
-        $(".sendFriendRequestButton").click(function(e){
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: '/sendFriendRequest',
-                data: {
-                    targetUserName:'{{$user->userName}}',
-                    _token: '{{ csrf_token() }}'
-                }
-
-            }).done(function (response) {
-
-                if (response == "friendRequestDonePrivate") {
-                    $('.sendFriendRequestButton').css('background-color', '#009999');
-                    $('.sendFriendRequestButton').attr('title', 'درخواست دنبال کردن ارسال شد');
-
-                }if (response == "friendRequestDonePublic") {
-                    $('.sendFriendRequestButton').css('background-color', '#83f441');
-                    $('.sendFriendRequestButton').attr('title', 'لغو دنبال کردن ' + '{{$user->firstName}}');
-
-                } else if (response == "CancelFriendRequestDone") {
-                    $('.sendFriendRequestButton').css('background-color', '#f47142');
-                    $('.sendFriendRequestButton').attr('title', ' دنبال کردن ' + '{{$user->firstName}}');
-
-                }
-            });
-        });
 
 
         $.ajax({
