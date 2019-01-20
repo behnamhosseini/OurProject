@@ -25,7 +25,7 @@ class FollowController extends Controller
     }
 
 
-    public function sendFriendRequest()
+    public function sendFollowRequest()
     {
 
         Validator::make(\request()->all(),[
@@ -34,7 +34,6 @@ class FollowController extends Controller
 //        return \request();
         // status = 1 means accepted
         // status = 0 means waiting
-
         $status = $this->targetUser()->accountType == 'public' ? 1 : 0;
         if($this->authUser() != $this->targetUser()->id)
         {

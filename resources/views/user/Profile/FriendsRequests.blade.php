@@ -55,11 +55,13 @@
                                     </div>
                                     <div class="notification-event">
                                         <a href="#" class="h6 notification-friend">{{$requestUser->fullName()}}</a> تو رو دنبال می کنه .
+                                        <br><span> دنبال کردن از: {{$request->created_at->diffForHumans()}}</span>
                                     </div>
                                     <span class="notification-icon">
                                     {{--<svg class="olymp-happy-face-icon"><use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use></svg>--}}
-                                        <button class="btn btn-info">ارسال پیام</button>
-                                        <button onclick="cancelFollow(event)" id="cancelFollowRequestButton-{{$requestUser->id}}" class="btn btn-danger">لغو دنبال کردن</button>
+
+                                        <button class="btn btn-sm btn-info">ارسال پیام</button>
+                                        <button onclick="cancelFollow(event)" id="cancelFollowRequestButton-{{$requestUser->id}}" class="btn btn-sm btn-danger">لغو دنبال کردن</button>
                                     </span>
 
                                 </li>
