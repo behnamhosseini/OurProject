@@ -78,8 +78,16 @@ class UserController extends Controller
     }
     public function FriendsRequests()
     {
-
-        return view('user.Profile.FriendsRequests');
+        $friendsRequests = Follow::where('target_id', auth()->user()->id)->latest()->get();
+        if ($friendsRequests->count() > 0)
+        {
+            foreach ($friendsRequests as $request)
+            {
+                $users[] = User::where('id', $request->user_id)->get()->first();
+            }
+            $friends = collect($users);
+        }
+        return view('user.Profile.FriendsRequests', compact('friendsRequests', 'friends'));
     }
     public function Notifications()
     {

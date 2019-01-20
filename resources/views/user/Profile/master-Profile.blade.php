@@ -324,6 +324,7 @@
 
 
 
+
             $("#headerImageUpload").on("change", function()
             {
                 var files = !!this.files ? this.files : [];

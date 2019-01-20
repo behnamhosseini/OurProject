@@ -72,4 +72,51 @@ class FollowController extends Controller
 
         return $status;
     }
+    public function acceptFollowRequest()
+    {
+        $requestUser = str_replace('acceptFollowRequestButton-', '',\request('requestUserName'));
+        Validator::make(\request()->all(),[
+            'requestUserName' => 'required|string'
+        ]);
+        $followStatement = Follow::where('user_id', $requestUser)->where('target_id', $this->authUser())->get()->first();
+//        return $followStatement;
+        if($followStatement->status == 0)
+        {
+            $followStatement->update([
+               'status' => 1
+            ]);
+            $status = "followAccepted";
+        }
+
+        return $status;
+    }
+    public function denyFollowRequest()
+    {
+        $requestUser = str_replace('denyFollowRequestButton-', '',\request('requestUserName'));
+        Validator::make(\request()->all(),[
+            'requestUserName' => 'required|string'
+        ]);
+        $followStatement = Follow::where('user_id', $requestUser)->where('target_id', $this->authUser())->get()->first();
+        if($followStatement->status == 0)
+        {
+            $followStatement->delete();
+            $status = "followDenied";
+        }
+        return $status;
+
+    }
+    public function cancelFollowing()
+    {
+        $requestUser = str_replace('cancelFollowRequestButton-', '',\request('requestUserName'));
+        Validator::make(\request()->all(),[
+            'requestUserName' => 'required|string'
+        ]);
+        $followStatement = Follow::where('user_id', $requestUser)->where('target_id', $this->authUser())->get()->first();
+        if($followStatement->status == 1)
+        {
+            $followStatement->delete();
+            $status = "followCancelled";
+        }
+        return $status;
+    }
 }

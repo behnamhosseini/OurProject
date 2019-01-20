@@ -51,6 +51,9 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/chargeYourAccount','UserController@chargeYourAccount')->name('chargeYourAccount');
     $this->post('/sendFriendRequest','FollowController@sendFriendRequest')->name('sendFriendRequest');
     $this->post('/checkFollowStatus','FollowController@checkFollowStatus')->name('checkFollowStatus');
+    $this->post('/acceptFollowRequest','FollowController@acceptFollowRequest')->name('acceptFollowRequest');
+    $this->post('/denyFollowRequest','FollowController@denyFollowRequest')->name('denyFollowRequest');
+    $this->post('/cancelFollow','FollowController@cancelFollowing')->name('cancelFollowRequest');
     Route::post('/ip','UserController@ip');
 
 });
@@ -63,7 +66,9 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-
+    $a = "button-2";
+    return $a;
+    return str_replace('-', '',$a);
 })->name('test');
 
 

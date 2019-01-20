@@ -84,4 +84,76 @@
         </div>
     </div>
     </div>
+    <script>
+        function acceptFollowRequest(event) {
+            let acceptId = event.target.id;
+            let denyId = acceptId.replace("accept", "deny");
+            event.preventDefault();
+            $.ajax({
+                    type: 'POST',
+                    url: '/acceptFollowRequest',
+                    data: {
+                        requestUserName: acceptId,
+                        _token: '{{ csrf_token() }}'
+                    }
+
+            }).done(function(response){
+                if(response == "followAccepted")
+                {
+                    $(`#${acceptId}`).css('background-color', '#42f480');
+                    $(`#${acceptId}`).text('درخواست از طرف تو پذیرفته شد');
+                    $(`#${acceptId}`).prop('disabled', true);
+                    $(`#${denyId}`).css('display', 'none');
+
+                }
+            });
+        }
+
+        function denyFollowRequest(event) {
+            let denyId = event.target.id;
+            let accpetId = denyId.replace("deny", "accept");
+            event.preventDefault();
+            $.ajax({
+                    type: 'POST',
+                    url: '/denyFollowRequest',
+                    data: {
+                        requestUserName: denyId,
+                        _token: '{{ csrf_token() }}'
+                    }
+
+            }).done(function(response){
+                if(response == "followDenied")
+                {
+                    $(`#${denyId}`).css('background-color', '#42f480');
+                    $(`#${denyId}`).text('درخواست از طرف تو رد شد');
+                    $(`#${denyId}`).prop('disabled', true);
+                    $(`#${accpetId}`).css('display', 'none');
+
+                }
+            });
+        }
+
+        function cancelFollow(event) {
+            let cancelId= event.target.id;
+            event.preventDefault();
+            $.ajax({
+                    type: 'POST',
+                    url: '/cancelFollow',
+                    data: {
+                        requestUserName: cancelId,
+                        _token: '{{ csrf_token() }}'
+                    }
+
+            }).done(function(response){
+                if(response == "followCancelled")
+                {
+                    $(`#${cancelId}`).css('background-color', '##ff3d40');
+                    $(`#${cancelId}`).text('دنبال کردن لغو شد');
+                    $(`#${cancelId}`).prop('disabled', true);
+                    // $(`#${accpetId}`).css('display', 'none');
+
+                }
+            });
+        }
+    </script>
 @endsection
