@@ -73,16 +73,45 @@ class FollowController extends Controller
     }
     public function acceptFollowRequest()
     {
+        // meaning of the status codes:
+        // 0 => waiting
+        // 1 => accepted when your account is public
+        // 2 => friend
+        // 3 => family
+        // 4 => relative
+//        return \request();
         $requestUser = str_replace('acceptFollowRequestButton-', '',\request('requestUserName'));
         Validator::make(\request()->all(),[
             'requestUserName' => 'required|string'
         ]);
         $followStatement = Follow::where('user_id', $requestUser)->where('target_id', $this->authUser())->get()->first();
-//        return $followStatement;
         if($followStatement->status == 0)
         {
+            switch (\request('type'))
+            {
+                case 'regular':
+                    {
+                        $status = '1';
+                        break;
+                    }
+                case 'friend':
+                    {
+                        $status = '2';
+                        break;
+                    }
+                case 'family':
+                    {
+                        $status = '3';
+                        break;
+                    }
+                case 'relative':
+                    {
+                        $status = '4';
+                        break;
+                    }
+            }
             $followStatement->update([
-               'status' => 1
+               'status' => $status
             ]);
             $status = "followAccepted";
         }
@@ -111,7 +140,7 @@ class FollowController extends Controller
             'requestUserName' => 'required|string'
         ]);
         $followStatement = Follow::where('user_id', $requestUser)->where('target_id', $this->authUser())->get()->first();
-        if($followStatement->status == 1)
+        if($followStatement->status != 0)
         {
             $followStatement->delete();
             $status = "followCancelled";
