@@ -230,10 +230,12 @@ class UserController extends Controller
     public function mutualFriends()
     {
         $authUserFollowings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+        $b=[];
         foreach ($authUserFollowings as $id)
         {
             $b[] = Follow::where('user_id', $id)->get()->pluck('target_id');
         }
+        $e=[];
         foreach ($b as $c)
         {
             foreach ($c as $d)
@@ -275,10 +277,10 @@ class UserController extends Controller
 
         }
         $posts=array_sort_recursive($posts);
-
-
+        $posts=array_reverse($posts);
         $mutualFriends = $this->mutualFriends();
         return view('user.Profile.Newsfeed',compact('posts', 'mutualFriends'));
+
     }
 
     public function logout()

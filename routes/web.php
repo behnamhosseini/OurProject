@@ -55,6 +55,7 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/denyFollowRequest','FollowController@denyFollowRequest')->name('denyFollowRequest');
     $this->post('/cancelFollow','FollowController@cancelFollowing')->name('cancelFollowRequest');
     Route::post('/ip','UserController@ip');
+    Route::post('/likePost','PostController@likePost');
 
 });
 
