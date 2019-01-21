@@ -99,4 +99,3 @@ Route::get('/test',function (){
 
 
 Route::post('/ip','UserController@ip');
-
