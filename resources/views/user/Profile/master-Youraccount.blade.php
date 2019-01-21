@@ -84,4 +84,82 @@
         </div>
     </div>
     </div>
+<script>
+
+    function acceptFollowRequest(event, type, id) {
+        let acceptId = event.target.id;
+        let denyId = acceptId.replace("accept", "deny");
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/acceptFollowRequest',
+            data: {
+                requestUserName: id,
+                type : type,
+                _token: '{{ csrf_token() }}'
+            }
+
+        }).done(function(response){
+            if(response == "followAccepted")
+            {
+                // $(`#${acceptId}`).css('background-color', '#42f480');
+                // $(`#${acceptId}`).text('درخواست از طرف تو پذیرفته شد');
+                $(`#acceptingFollowRequest-${id}`).css('display', 'none');
+                $(`#acceptingFollowRequestRegular-${id}`).css('display', 'none');
+                $(`#acceptingFollowRequestText-${id}`).text('در خواست از طرف تو قبول شد');
+                $(`#${denyId}`).css('display', 'none');
+            }
+        });
+    }
+
+    function denyFollowRequest(event, id) {
+        let denyId = event.target.id;
+        // let accpetId  = denyId.replace("denyFollowRequest", "acceptingFollowRequest");
+        let accpetId = `acceptingFollowRequest-${id}`;
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/denyFollowRequest',
+            data: {
+                requestUserName: denyId,
+                _token: '{{ csrf_token() }}'
+            }
+
+        }).done(function(response){
+            if(response == "followDenied")
+            {
+                $(`#${denyId}`).css('background-color', '#42f480');
+                $(`#${denyId}`).text('درخواست از طرف تو رد شد');
+                $(`#${denyId}`).prop('disabled', true);
+                $(`#${accpetId}`).css('display', 'none');
+                $(`#acceptingFollowRequestText-${id}`).text('در خواست از طرف تو رد شد');
+                // console.log(accpetId);
+            }
+        });
+    }
+
+    function cancelFollow(event) {
+        let cancelId= event.target.id;
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/cancelFollow',
+            data: {
+                requestUserName: cancelId,
+                _token: '{{ csrf_token() }}'
+            }
+
+        }).done(function(response){
+            if(response == "followCancelled")
+            {
+                $(`#${cancelId}`).css('background-color', '##ff3d40');
+                $(`#${cancelId}`).text('دنبال کردن لغو شد');
+                $(`#${cancelId}`).prop('disabled', true);
+                // $(`#${accpetId}`).css('display', 'none');
+
+            }
+        });
+    };
+
+</script>
 @endsection

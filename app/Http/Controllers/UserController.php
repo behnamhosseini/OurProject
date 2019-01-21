@@ -78,8 +78,16 @@ class UserController extends Controller
     }
     public function FriendsRequests()
     {
-
-        return view('user.Profile.FriendsRequests');
+        $friendsRequests = Follow::where('target_id', auth()->user()->id)->latest()->get();
+        if ($friendsRequests->count() > 0)
+        {
+            foreach ($friendsRequests as $request)
+            {
+                $users[] = User::where('id', $request->user_id)->get()->first();
+            }
+            $friends = collect($users);
+        }
+        return view('user.Profile.FriendsRequests', compact('friendsRequests', 'friends'));
     }
     public function Notifications()
     {
@@ -219,6 +227,37 @@ class UserController extends Controller
         return view('auth.register');
     }
 
+    public function mutualFriends()
+    {
+        $authUserFollowings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+        foreach ($authUserFollowings as $id)
+        {
+            $b[] = Follow::where('user_id', $id)->get()->pluck('target_id');
+        }
+        foreach ($b as $c)
+        {
+            foreach ($c as $d)
+            {
+                $e[] = $d;
+            }
+        }
+        $f = array_count_values($e);
+        $res=[];
+        foreach ($f as $g => $mutualCount)
+        {
+            $alreadyFollowing = Follow::where('user_id', auth()->user()->id)->where('target_id', $g)->get()->toArray();
+            if($mutualCount >= 2)
+            {
+                if($alreadyFollowing == null)
+                {
+                    $g = \App\User::where('id',$g)->get();
+                    $res[$mutualCount]= $g ;
+                }
+            }
+        }
+        return $res;
+    }
+
     public function Newsfeed()
     {
         $user = auth()->user()->id;
@@ -235,10 +274,11 @@ class UserController extends Controller
             }
 
         }
-
         $posts=array_sort_recursive($posts);
         $posts=array_reverse($posts);
-        return view('user.Profile.Newsfeed',compact('posts'));
+        $mutualFriends = $this->mutualFriends();
+        return view('user.Profile.Newsfeed',compact('posts', 'mutualFriends'));
+
     }
 
     public function logout()

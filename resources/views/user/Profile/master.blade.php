@@ -1898,8 +1898,39 @@
 <script src="/js/faceMocion.js"></script>
 <script src="/js/webfontloader.min.js"></script>
 
-<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
 <script>
+
+
+    function sendFollowRequest(id, event)
+    {
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/sendFollowRequest',
+            data: {
+                targetUserName: id,
+                _token: '{{ csrf_token() }}'
+            }
+
+        }).done(function (response) {
+
+            if (response == "friendRequestDonePrivate") {
+                $(`#${id}`).css('background-color', '#009999');
+                $(`#${id}`).attr('title', 'درخواست دنبال کردن ارسال شد');
+
+            } else if (response == "friendRequestDonePublic") {
+                $(`#${id}`).css('background-color', '#83f441');
+                $(`#${id}`).attr('title', 'لغو دنبال کردن ' );
+
+            } else if (response == "CancelFriendRequestDone") {
+                $(`#${id}`).css('background-color', '#f47142');
+                $(`#${id}`).attr('title', ' دنبال کردن ');
+
+            }
+        });
+
+    };
+
     $(".facemocion").faceMocion( {emociones:[
             {"emocion":"amo","TextoEmocion":"عاشقم!"},
             {"emocion":"molesto","TextoEmocion":"عصبیم"},
@@ -1910,9 +1941,9 @@
             {"emocion":"asombro","TextoEmocion":"متعجبم"},
             {"emocion":"alegre","TextoEmocion":"خوشحالم"}
         ]});
-</script>
-<script>
-    $(document).ready(function(){
+
+
+        $(document).ready(function(){
 
 
         $.ajax({

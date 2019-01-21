@@ -267,6 +267,8 @@
 
     <script>
 
+
+
         $(function() {
 
             $.ajax({
@@ -298,7 +300,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: 'POST',
-                    url: '/sendFriendRequest',
+                    url: '/sendFollowRequest',
                     data: {
                         targetUserName:'{{$user->userName}}',
                         _token: '{{ csrf_token() }}'
@@ -321,6 +323,7 @@
                     }
                 });
             });
+
 
 
 

@@ -62,12 +62,12 @@
 
                                     <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
                                         <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
-                                            @if($user->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
+                                            @if($friendUser->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
 
                                             @else
                                                 <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
                                                     <div class="control-block-button">
-                                                        <a href="#" style="background-color: white" class="btn btn-control bg-blue sendFriendRequestButton">
+                                                        <a style="background-color: #f47142" onclick="sendFollowRequest(event)" href="#" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
                                                             <svg class="olymp-happy-face-icon " style="width: 20px; height: 20px">
                                                                 <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
                                                             </svg>
@@ -138,11 +138,11 @@
                                             @else
                                                 <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
                                                     <div class="control-block-button">
-                                                        <a href="#" class="btn btn-control bg-blue sendFriendRequestButton">
+                                                        <button style="background-color: #f47142" onclick="sendFollowRequest('{{$friendUser->userName}}', event)" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
                                                             <svg class="olymp-happy-face-icon" style="width: 20px; height: 20px">
                                                                 <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
                                                             </svg>
-                                                        </a>
+                                                        </button>
 
                                                     </div>
                                                 </div>

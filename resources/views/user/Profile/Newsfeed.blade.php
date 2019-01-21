@@ -660,84 +660,47 @@
                 </div>
             </div>
 
+            @if($mutualFriends != null)
+                <div class="ui-block">
+                    <div class="ui-block-title">
+                        <h6 class="title">پیشنهاد دوستان</h6>
+                        {{--<a href="#" class="more">--}}
+                            {{--<svg class="olymp-three-dots-icon">--}}
+                                {{--<use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>--}}
+                                {{----                        </svg>--}}
+                        {{--</a>--}}
+                    </div>
+                    <ul class="widget w-friend-pages-added notification-list friend-requests">
+                        @foreach($mutualFriends as $count => $user)
+                            <?php $user = $user->first(); ?>
+                            <li class="inline-items">
+                                <div class="author-thumb">
+                                    <img src="{{$user->profilePictures['everyOne']}}" alt="author">
+                                </div>
+                                <div class="notification-event">
+                                    <a href="#" class="h6 notification-friend">{{$user->firstName}}</a>
+                                    <span class="chat-message-item">{{$count}} دوست مشترک</span>
+                                </div>
+                                <span class="notification-icon">
+                                  <button onclick="sendFollowRequest('{{$user->userName}}', event)" id="{{$user->userName}}" class="accept-request">
 
-            <div class="ui-block">
-                <div class="ui-block-title">
-                    <h6 class="title">پیشنهاد دوستان</h6>
-                    <a href="#" class="more">
-                        <svg class="olymp-three-dots-icon">
-                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
-                            --
-                        </svg>
-                    </a>
+                                    <span class="icon-add without-text">
+                                      <svg class="olymp-happy-face-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </span>
+
+                            </li>
+                        @endforeach
+                    </ul>
+
                 </div>
+            @endif
 
-                <ul class="widget w-friend-pages-added notification-list friend-requests">
-                    <li class="inline-items">
-                        <div class="author-thumb">
-                            <img src="/img/avatar38-sm.jpg" alt="author">
-                        </div>
-                        <div class="notification-event">
-                            <a href="#" class="h6 notification-friend">نسرین</a>
-                            <span class="chat-message-item">8 دوست مشترک</span>
-                        </div>
-                        <span class="notification-icon">
-								<a href="#" class="accept-request">
-									<span class="icon-add without-text">
-										<svg class="olymp-happy-face-icon">
-											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-										</svg>
-									</span>
-								</a>
-							</span>
 
-                    </li>
-
-                    <li class="inline-items">
-                        <div class="author-thumb">
-                            <img src="/img/avatar39-sm.jpg" alt="author">
-                        </div>
-                        <div class="notification-event">
-                            <a href="#" class="h6 notification-friend">مریلا</a>
-                            <span class="chat-message-item">6 دوست مشترک</span>
-                        </div>
-                        <span class="notification-icon">
-								<a href="#" class="accept-request">
-									<span class="icon-add without-text">
-										<svg class="olymp-happy-face-icon">
-											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-										</svg>
-									</span>
-								</a>
-							</span>
-
-                    </li>
-
-                    <li class="inline-items">
-                        <div class="author-thumb">
-                            <img src="/img/avatar40-sm.jpg" alt="author">
-                        </div>
-                        <div class="notification-event">
-                            <a href="#" class="h6 notification-friend">کامران</a>
-                            <span class="chat-message-item">6 دوست مشترک</span>
-                        </div>
-                        <span class="notification-icon">
-								<a href="#" class="accept-request">
-									<span class="icon-add without-text">
-										<svg class="olymp-happy-face-icon">
-											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-										</svg>
-									</span>
-								</a>
-							</span>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="ui-block">
+                <div class="ui-block">
 
                 <div class="ui-block-title">
                     <h6 class="title">خوراک فعالیت</h6>

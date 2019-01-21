@@ -49,8 +49,11 @@ Route::middleware('checkFullyActivated')->group(function(){
     $this->post('/uploadFriendsImage','UserController@uploadFriendsImage')->name('uploadFriendsImage');
     $this->post('/uploadRelativesImage','UserController@uploadRelativesImage')->name('uploadRelativesImage');
     $this->post('/chargeYourAccount','UserController@chargeYourAccount')->name('chargeYourAccount');
-    $this->post('/sendFriendRequest','FollowController@sendFriendRequest')->name('sendFriendRequest');
+    $this->post('/sendFollowRequest','FollowController@sendFollowRequest')->name('sendFollowRequest');
     $this->post('/checkFollowStatus','FollowController@checkFollowStatus')->name('checkFollowStatus');
+    $this->post('/acceptFollowRequest','FollowController@acceptFollowRequest')->name('acceptFollowRequest');
+    $this->post('/denyFollowRequest','FollowController@denyFollowRequest')->name('denyFollowRequest');
+    $this->post('/cancelFollow','FollowController@cancelFollowing')->name('cancelFollowRequest');
     Route::post('/ip','UserController@ip');
     Route::post('/likePost','PostController@likePost');
 
@@ -64,7 +67,33 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-
+    $authUserFollowings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+    foreach ($authUserFollowings as $id)
+    {
+        $b[] = Follow::where('user_id', $id)->get()->pluck('target_id');
+    }
+    foreach ($b as $c)
+    {
+        foreach ($c as $d)
+        {
+            $e[] = $d;
+        }
+    }
+    $f = array_count_values($e);
+    $res=[];
+    foreach ($f as $g => $mutualCount)
+    {
+        $alreadyFollowing = Follow::where('user_id', auth()->user()->id)->where('target_id', $g)->get()->toArray();
+        if($mutualCount >= 2)
+        {
+            if($alreadyFollowing == null)
+            {
+                $g = \App\User::where('id',$g)->get();
+                $res[$mutualCount]= $g ;
+            }
+        }
+    }
+    return $res;
 })->name('test');
 
 
