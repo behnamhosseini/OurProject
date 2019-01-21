@@ -506,6 +506,7 @@
 
         });
     </script>
+
 @endsection
 @section('content')
     @yield('content')

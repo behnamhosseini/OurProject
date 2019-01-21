@@ -275,10 +275,10 @@ class UserController extends Controller
 
         }
         $posts=array_sort_recursive($posts);
-
-
+        $posts=array_reverse($posts);
         $mutualFriends = $this->mutualFriends();
         return view('user.Profile.Newsfeed',compact('posts', 'mutualFriends'));
+
     }
 
     public function logout()

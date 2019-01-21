@@ -259,7 +259,7 @@
 
                                 <li id="liLocation" class="col-xs-12 col-sm-12 col-md-6 my-auto  ">
                                     <span class="small">مکان شما:</span>
-                                    <span id="spanLocation"  class="small"></span>
+                                    <span id="spanLocation" class="small"></span>
                                     <input type="hidden" id="Location" name="Location" class="small" value="">
                                 </li>
 
@@ -290,14 +290,14 @@
                                         <!-- Window-popup بروزرسانی تصویر هدر -->
 
 
-                                        <div class="modal fade"  id="update-header-photo" >
-                                            <div  class="modal-dialog ui-block window-popup">
-                                                <div class="ui-block-title" >
+                                        <div class="modal fade" id="update-header-photo">
+                                            <div class="modal-dialog ui-block window-popup">
+                                                <div class="ui-block-title">
                                                     <h6 class="title">یه عکس برای پست مورد نظرت انتخاب کن</h6>
                                                 </div>
                                                 <div class="container">
                                                     <div class="panel panel-default">
-                                                        <div class="panel-body" >
+                                                        <div class="panel-body">
 
 
                                                             <div class="row">
@@ -305,18 +305,27 @@
                                                                     <div id="upload-demo" style="width:100%"></div>
                                                                 </div>
                                                                 <div class="col-md-4 justify-content-center my-auto">
-                                                                    <div class="panel-heading">عکس مورد نظر رو انتخاب و بعد از برش روی دکمه انتخاب شد کلیک کنید</div>
+                                                                    <div class="panel-heading">عکس مورد نظر رو انتخاب و
+                                                                        بعد از برش روی دکمه انتخاب شد کلیک کنید
+                                                                    </div>
                                                                     <br/>
                                                                     <label for="upload">انتخاب عکس</label>
-                                                                    <input type="file" id="upload" value="انتخاب عکس" class="file" placeholder="انتخاب عکس" >
+                                                                    <input type="file" id="upload" value="انتخاب عکس"
+                                                                           class="file" placeholder="انتخاب عکس">
                                                                     <br/>
-                                                                    <button type="button" id="uploadBtn" class="btn btn-success upload-result mb-1">آپلود</button>
+                                                                    <button type="button" id="uploadBtn"
+                                                                            class="btn btn-success upload-result mb-1">
+                                                                        آپلود
+                                                                    </button>
                                                                 </div>
 
 
-                                                                <div class="col-md-4 justify-content-center my-auto" >
-                                                                    <div id="upload-demo-i" class="content-center my-auto mx-auto" style="width:200px;height:200px"></div>
-                                                                    <input type="hidden" id="postImage" name="imageUrl" value="">
+                                                                <div class="col-md-4 justify-content-center my-auto">
+                                                                    <div id="upload-demo-i"
+                                                                         class="content-center my-auto mx-auto"
+                                                                         style="width:200px;height:200px"></div>
+                                                                    <input type="hidden" id="postImage" name="imageUrl"
+                                                                           value="">
                                                                 </div>
 
                                                             </div>
@@ -326,7 +335,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" id="close" class="btn btn-success" data-dismiss="modal">بستن</button>
+                                                    <button type="button" id="close" class="btn btn-success"
+                                                            data-dismiss="modal">بستن
+                                                    </button>
                                                     <script>
                                                         $("#uploadBtn").click(function () {
                                                             $("#close").text('انتخاب شد');
@@ -369,7 +380,9 @@
                                         </script>
 
                                         <button type="submit" class="btn btn-breez-light">ارسال</button>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sendVipPost">داغش کن!</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#sendVipPost">داغش کن!
+                                        </button>
 
                                         <!-- Window-popup ارسال پست ویژه -->
 
@@ -378,31 +391,45 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h4 class="modal-title float-right">پستتو داغش کن!</h4>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            &times;
+                                                        </button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="container">
                                                             <div class="jumbotron">
-                                                                <h6>دوس داری پستی که میذاری رو همه ببینن؟حتی کسایی که با هم دوست نیستین!</h6>
-                                                                <p>با استفاده از داغش کن پستی که میزاری بعنوان اولین پست برای تمامی اعضای این برنامه نمایش داده میشه و میتونی بعنوان تبلیغ کار یا هر چیزی که میخوای ازش استفاده کنی!</p>
-                                                                <p>فقط برای استفاده از این قابلیت حداقل باید 1000 تومن شارژ داشته باشی</p>
+                                                                <h6>دوس داری پستی که میذاری رو همه ببینن؟حتی کسایی که با
+                                                                    هم دوست نیستین!</h6>
+                                                                <p>با استفاده از داغش کن پستی که میزاری بعنوان اولین پست
+                                                                    برای تمامی اعضای این برنامه نمایش داده میشه و میتونی
+                                                                    بعنوان تبلیغ کار یا هر چیزی که میخوای ازش استفاده
+                                                                    کنی!</p>
+                                                                <p>فقط برای استفاده از این قابلیت حداقل باید 1000 تومن
+                                                                    شارژ داشته باشی</p>
                                                             </div>
                                                             @if(auth()->user()->credit < 1000)
-                                                                <div class="alert alert-danger"> شارژ شما برای ارسال پست داغ کافی نیست.برای افزایش شارژ روی دکمه افزایش شارژ کلیک کنید</div>
+                                                                <div class="alert alert-danger"> شارژ شما برای ارسال پست
+                                                                    داغ کافی نیست.برای افزایش شارژ روی دکمه افزایش شارژ
+                                                                    کلیک کنید
+                                                                </div>
                                                             @endif()
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <div>
-                                                            <span>مقدار شارژ شما :{{auth()->user()->credit}} تومان</span>
+                                                            <span>مقدار شارژ شما :{{auth()->user()->credit}}تومان</span>
                                                         </div>
                                                         <div>
-                                                            <button type="button" class="btn btn-outline-grey" data-dismiss="modal">بستن</button>
+                                                            <button type="button" class="btn btn-outline-grey"
+                                                                    data-dismiss="modal">بستن
+                                                            </button>
                                                             @if(auth()->user()->credit >= 1000)
-                                                                <button type="submit" class="btn btn-danger">بزن بریم!</button>
+                                                                <button type="submit" class="btn btn-danger">بزن بریم!
+                                                                </button>
                                                                 <input name="postType" type="hidden" value="vip">
                                                             @else
-                                                                <a href="/ProfilePageFinancialAffairs/{{auth()->user()->userName}}"class="btn btn-danger">افزایش شارژ</a>
+                                                                <a href="/ProfilePageFinancialAffairs/{{auth()->user()->userName}}"
+                                                                   class="btn btn-danger">افزایش شارژ</a>
                                                             @endif()
                                                         </div>
                                                     </div>
@@ -413,9 +440,6 @@
                                         <!-- End-popup ارسال پست ویژه -->
 
 
-
-
-
                                     </div>
 
                                 </div>
@@ -424,130 +448,169 @@
                     </div>
 
                 </form>
-        @endauth()
+            @endauth()
 
         <!--End send post-->
-@foreach($posts as $post)
-            <div id="newsfeed-items-grid">
-                <div class="ui-block">
-                    <article class="hentry post has-post-thumbnail" >
+            @foreach($posts as $post)
+                <div id="newsfeed-items-grid">
+                    <div class="ui-block">
+                        <article class="hentry post has-post-thumbnail">
 
-                        <div class="post__author author vcard inline-items">
-                            <img src="{{$post->user->profilePictures['everyOne']}}" alt="author">
+                            <div class="post__author author vcard inline-items">
+                                <img src="{{$post->user->profilePictures['everyOne']}}" alt="author">
 
-                            <div class="author-date">
-                                <a class="h6 post__author-name fn" href="/ProfilePage/{{$post->user->userName}}">{{$post->user->fullName()}}</a>
-                                <div class="post__date">
-                                    <time class="published" datetime="2004-07-24T18:18">
-                                        {{$post->created_at->diffForHumans()}}
-                                    </time>
+                                <div class="author-date">
+                                    <a class="h6 post__author-name fn"
+                                       href="/ProfilePage/{{$post->user->userName}}">{{$post->user->fullName()}}</a>
+                                    <div class="post__date">
+                                        <time class="published" datetime="2004-07-24T18:18">
+                                            {{$post->created_at->diffForHumans()}}
+                                        </time>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon">
-                                    <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
-                                </svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">ویرایش پست</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">حذف</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خاموش کردن اطلاعیه ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">انتخاب بعنوان ویژه شده</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <p></p>
-
-                        <div class="post-thumb">
-                            <img src="{{$post->imageUrl}}" style="position: relative">
-                        </div>
-
-                        <div class="post-additional-info inline-items">
-
-                            <a href="#" class="post-add-icon inline-items">
-                                <svg class="olymp-heart-icon">
-                                    <use xlink:href="/icons/icons.svg#olymp-heart-icon"></use>
-                                </svg>
-                                <span>{{$post->likeCount}}</span>
-                            </a>
-
-                            <ul class="friends-harmonic">
-                                <li>
-                                    <a href="#">
-                                        <img src="/img/friend-harmonic9.jpg" alt="friend">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="names-people-likes">
-                                <a href="#">جیمی</a>,
-                                <a href="#">ملانی</a> و
-                                <br>{{$post->likeCount}} کاربر این پست را پسندیدند
-                            </div>
-
-
-                            <div class="comments-shared">
-                                <a href="#" class="post-add-icon inline-items">
-                                    <svg class="olymp-speech-balloon-icon">
-                                        <use xlink:href="/icons/icons.svg#olymp-speech-balloon-icon"></use>
+                                <div class="more">
+                                    <svg class="olymp-three-dots-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                                     </svg>
-                                    <span>{{$post->commentCount}}</span>
+                                    <ul class="more-dropdown">
+                                        @if($post->user->id == auth()->user()->id)
+                                            <li>
+                                                <a href="#">ویرایش پست</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">حذف</a>
+                                            </li>
+                                        @endif()
+                                        <li>
+                                            <a href="#">خاموش کردن اطلاعیه ها</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">انتخاب بعنوان ویژه شده</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <p>{{$post->body}}</p>
+
+                            <div class="post-thumb">
+                                <img src="{{$post->imageUrl}}" style="position: relative">
+                            </div>
+
+                            <div class="post-additional-info inline-items">
+                                <a class="post-add-icon inline-items">
+                                    <svg id="like" class="olymp-heart-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-heart-icon"></use>
+                                    </svg>
+                                    <span id="count">{{$post->likeCount['count']}}</span>
+                                </a>
+                                <ul class="friends-harmonic">
+                                    <?php $i = 0;?>
+                                    @foreach($post->likeCount['id'] as $functure)
+                                        <?php if ($i == 9) {
+                                            breck;
+                                        } ?>
+                                        <li>
+                                            <a href="#">
+                                                <img src="{{\App\User::where('id',$functure)->first()->profilePictures['everyOne']}}"
+                                                     alt="friend">
+                                            </a>
+                                        </li>
+                                        <?php $i++; ?>
+                                    @endforeach
+                                </ul>
+
+                                <div class="names-people-likes">
+                                    <?php $i = 0;?>
+                                    @foreach($post->likeCount['id'] as $functure)
+                                        <?php if ($i == 5) {
+                                            breck;
+                                        } ?>
+                                        <a href="#">{{\App\User::where('id',$functure)->first()->firstName}}</a>@if($post->likeCount['count'] == 2)
+                                            و
+                                        @else ,
+                                        @endif
+                                        <?php $i++; ?>
+                                    @endforeach
+                                    @if($post->likeCount['count']  > 5  )
+                                        <br>و{{$post->likeCount['count'] - $i }}کاربر این پست را پسندیدند
+                                    @else
+                                        <br>این پست را پسندیدند
+                                    @endif()
+                                </div>
+
+                                <div class="comments-shared">
+                                    <a href="#" class="post-add-icon inline-items">
+                                        <svg class="olymp-speech-balloon-icon">
+                                            <use xlink:href="/icons/icons.svg#olymp-speech-balloon-icon"></use>
+                                        </svg>
+                                        <span>{{$post->commentCount}}</span>
+                                    </a>
+
+                                    <a href="#" class="post-add-icon inline-items">
+                                        <svg class="olymp-share-icon">
+                                            <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
+                                        </svg>
+                                        <span>{{$post->shareCount}}</span>
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+                            <div class="control-block-button post-control-button">
+
+                                <a href="#" class="btn btn-control">
+                                    <svg class="olymp-like-post-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-like-post-icon"></use>
+                                    </svg>
                                 </a>
 
-                                <a href="#" class="post-add-icon inline-items">
+                                <a href="#" class="btn btn-control">
+                                    <svg class="olymp-comments-post-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-comments-post-icon"></use>
+                                    </svg>
+                                </a>
+
+                                <a href="#" class="btn btn-control">
                                     <svg class="olymp-share-icon">
                                         <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
                                     </svg>
-                                    <span>{{$post->shareCount}}</span>
                                 </a>
+
                             </div>
 
+                        </article>
+                    </div>
 
-                        </div>
 
-                        <div class="control-block-button post-control-button">
+                    <script>
+                        $("#like").click(function () {
+                            $.ajax({
+                                method: 'post',
+                                url: '/likePost',
+                                data: {
+                                    post_id: '{{$post->id}}',
+                                    functur: '{{auth()->user()->id}}',
+                                    _token: '{{csrf_token()}}'
 
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-like-post-icon">
-                                    <use xlink:href="/icons/icons.svg#olymp-like-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-comments-post-icon">
-                                    <use xlink:href="/icons/icons.svg#olymp-comments-post-icon"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#" class="btn btn-control">
-                                <svg class="olymp-share-icon">
-                                    <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-
-                    </article>
-                </div>
-
-            </div>
-@endforeach()
-            <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html"
-               data-container="newsfeed-items-grid">
-                <svg class="olymp-three-dots-icon">
-                    <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
-                </svg>
-            </a>
+                                }
+                            }).done(function (response) {
+                                $("#count").text(response);
+                            })
+                        })
+                    </script>
+                    @endforeach()
+                    <a id="load-more-button" href="#" class="btn btn-control btn-more"
+                       data-load-link="items-to-load.html"
+                       data-container="newsfeed-items-grid">
+                        <svg class="olymp-three-dots-icon">
+                            <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
+                        </svg>
+                    </a>
         </main>
 
 
@@ -607,7 +670,6 @@
                                 {{----                        </svg>--}}
                         {{--</a>--}}
                     </div>
-
                     <ul class="widget w-friend-pages-added notification-list friend-requests">
                         @foreach($mutualFriends as $count => $user)
                             <?php $user = $user->first(); ?>
@@ -620,14 +682,15 @@
                                     <span class="chat-message-item">{{$count}} دوست مشترک</span>
                                 </div>
                                 <span class="notification-icon">
-								<button onclick="sendFollowRequest('{{$user->userName}}', event)" id="{{$user->userName}}" class="accept-request">
-									<span class="icon-add without-text">
-										<svg class="olymp-happy-face-icon">
-											<use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-										</svg>
-									</span>
-								</button>
-							</span>
+                                  <button onclick="sendFollowRequest('{{$user->userName}}', event)" id="{{$user->userName}}" class="accept-request">
+
+                                    <span class="icon-add without-text">
+                                      <svg class="olymp-happy-face-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </span>
 
                             </li>
                         @endforeach
