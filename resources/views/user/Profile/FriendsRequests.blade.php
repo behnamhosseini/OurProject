@@ -21,34 +21,38 @@
                                     </div>
                                     <div class="notification-event">
                                         <a href="#" class="h6 notification-friend">{{$requestUser->fullName()}}</a>
-                                        {{--<span class="chat-message-item">دوست متقابل: سمانه کاشانی</span>--}}
+                                        <span class="chat-message-item" id="acceptingFollowRequestText-{{$requestUser->id}}">قبول کردن به عنوان</span>
+                                        <hr>
+                                        <br>
+                                        <div class="btn-group " id="acceptingFollowRequest-{{$requestUser->id}}">
+                                        <button onclick="acceptFollowRequest(event, 'regular',{{$requestUser->id}})" id="acceptingFollowRequestRegular-{{$requestUser->id}}" class="acceptingFriendRequest btn btn-danger btn-sm">
+                                            فالوور معمولی
+                                        </button>
+
+                                            <button onclick="acceptFollowRequest(event, 'friend', {{$requestUser->id}})" id="acceptFollowRequestButton-{{$requestUser->id}}" class="acceptingFriendRequest btn btn-success btn-sm">
+                                                دوست
+                                            </button>
+                                            <button onclick="acceptFollowRequest(event, 'family', {{$requestUser->id}})" id="acceptFollowRequestButton-{{$requestUser->id}}" class="acceptingFriendRequest btn btn-info btn-sm">
+                                                خانواده
+                                            </button>
+                                            <button onclick="acceptFollowRequest(event, 'relative',{{$requestUser->id}})" id="acceptFollowRequestButton-{{$requestUser->id}}" class="acceptingFriendRequest btn btn-warning btn-sm">
+                                                آشنا
+                                            </button>
+
+
+                                        </div>
                                     </div>
-                                    <span class="notification-icon">
-                                    <button onclick="acceptFollowRequest(event)" id="acceptFollowRequestButton-{{$requestUser->id}}" class="accept-request">
-                                        <span class="icon-add">
-                                            <svg class="olymp-happy-face-icon "><use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use></svg>
-                                        </span>
-                                        پذیرفتن درخواست
-                                    </button>
-                                    <button onclick="denyFollowRequest(event)" id="denyFollowRequestButton-{{$requestUser->id}}" class="accept-request bg-warning">
-                                        <span class="icon-add">
-                                            <svg class="olymp-happy-face-icon "><use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use></svg>
-                                        </span>
-                                        رد درخواست
-                                    </button>
 
-
-
-                                </span>
 
                                     <div class="more">
-                                        <svg class="olymp-three-dots-icon"><use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use></svg>
-                                        <svg class="olymp-little-delete"><use xlink:href="/icons/icons.svg#olymp-little-delete"></use></svg>
+                                        <button onclick="denyFollowRequest(event, '{{$requestUser->id}}')" id="denyFollowRequestButton-{{$requestUser->id}}" class="btn btn-primary">
+                                            رد درخواست
+                                        </button>
                                     </div>
                                 </li>
 
 
-                            @elseif($request->status == 1)
+                            @elseif($request->status != 0)
                                 <li class="accepted">
                                     <div class="author-thumb">
                                         <img src="{{$requestUser->profilePictures['everyOne']}}" alt="author">
