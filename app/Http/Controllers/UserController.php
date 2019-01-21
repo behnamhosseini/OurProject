@@ -227,6 +227,37 @@ class UserController extends Controller
         return view('auth.register');
     }
 
+    public function mutualFriends()
+    {
+        $authUserFollowings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+        foreach ($authUserFollowings as $id)
+        {
+            $b[] = Follow::where('user_id', $id)->get()->pluck('target_id');
+        }
+        foreach ($b as $c)
+        {
+            foreach ($c as $d)
+            {
+                $e[] = $d;
+            }
+        }
+        $f = array_count_values($e);
+        $res=[];
+        foreach ($f as $g => $mutualCount)
+        {
+            $alreadyFollowing = Follow::where('user_id', auth()->user()->id)->where('target_id', $g)->get()->toArray();
+            if($mutualCount >= 2)
+            {
+                if($alreadyFollowing == null)
+                {
+                    $g = \App\User::where('id',$g)->get();
+                    $res[$mutualCount]= $g ;
+                }
+            }
+        }
+        return $res;
+    }
+
     public function Newsfeed()
     {
         $user = auth()->user()->id;
@@ -243,10 +274,11 @@ class UserController extends Controller
             }
 
         }
-
         $posts=array_sort_recursive($posts);
 
-        return view('user.Profile.Newsfeed',compact('posts'));
+
+        $mutualFriends = $this->mutualFriends();
+        return view('user.Profile.Newsfeed',compact('posts', 'mutualFriends'));
     }
 
     public function logout()

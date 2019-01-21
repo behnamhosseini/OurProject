@@ -27,10 +27,10 @@ class FollowController extends Controller
 
     public function sendFollowRequest()
     {
-
-        Validator::make(\request()->all(),[
-            'targetUserName' => 'required|alpha'
-        ]);
+//
+//        Validator::make(\request()->all(),[
+//            'targetUserName' => 'required|string'
+//        ]);
 //        return \request();
         // status = 1 means accepted
         // status = 0 means waiting

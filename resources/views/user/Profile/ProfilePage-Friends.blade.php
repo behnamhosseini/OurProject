@@ -138,11 +138,11 @@
                                             @else
                                                 <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
                                                     <div class="control-block-button">
-                                                        <a style="background-color: #f47142" onclick="sendFollowRequest(event)" href="#" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
+                                                        <button style="background-color: #f47142" onclick="sendFollowRequest('{{$friendUser->userName}}', event)" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
                                                             <svg class="olymp-happy-face-icon" style="width: 20px; height: 20px">
                                                                 <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
                                                             </svg>
-                                                        </a>
+                                                        </button>
 
                                                     </div>
                                                 </div>
