@@ -537,6 +537,8 @@ class UserController extends Controller
                     "friends" => null,
                     "family"=> null,
                     "relatives"=> null,
+                    "defaultProfile"=> \request('sex') == 'زن' ? '/img/defaultFemaleAvatar.png' : '/img/defaultMaleAvatar.png',
+                    "defaultHeader"=> '/img/defaultHeaderImage.jpeg',
 
                 ],
                 "socialMedia" => [

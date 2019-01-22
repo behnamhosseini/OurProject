@@ -68,33 +68,43 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-    $authUserFollowings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
-    foreach ($authUserFollowings as $id)
+
+//    dd( \auth()->user()->profilePictures);
+    return \auth()->user()->profilePictures;
+    return;
+    $a = "header:head,prof:pro";
+//    return $a;
+    $a = explode(',', $a);
+    foreach ($a as $aa)
     {
-        $b[] = Follow::where('user_id', $id)->get()->pluck('target_id');
+        $b = strpos($aa, ':');
+        $value = substr($aa, $b + 1);
+        $key = substr($aa, 0,$b);
+        $res[$key] = $value;
     }
-    foreach ($b as $c)
-    {
-        foreach ($c as $d)
-        {
-            $e[] = $d;
-        }
-    }
-    $f = array_count_values($e);
-    $res=[];
-    foreach ($f as $g => $mutualCount)
-    {
-        $alreadyFollowing = Follow::where('user_id', auth()->user()->id)->where('target_id', $g)->get()->toArray();
-        if($mutualCount >= 2)
-        {
-            if($alreadyFollowing == null)
-            {
-                $g = \App\User::where('id',$g)->get();
-                $res[$mutualCount]= $g ;
-            }
-        }
-    }
-    return $res;
+    return $res['header']; //done!
+
+
+
+
+
+    $a = "header:head,prof:pro";
+$a = explode(',', $a);
+
+$b = strpos($a[0], ':');
+$value = substr($a[0], $b + 1);
+$key = substr($a[0], 0,$b);
+$res[$key] = $value;
+return $res;
+
+
+
+
+//echo $key;
+
+//echo $a[0];
+//return $a[0];
+//return $a['header'];
 })->name('test');
 
 

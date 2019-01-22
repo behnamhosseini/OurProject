@@ -7,11 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
-    protected $fillable=[
-        'user_id','body','imageUrl','mood','likeCount','commentCount','shareCount','postType','location'
-    ];
-    protected $table = 'posts';
-
     protected $casts = [
         'likeCount' => 'array'
     ];
