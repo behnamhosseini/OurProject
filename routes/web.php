@@ -68,46 +68,9 @@ Route::middleware('checkPhoneActivated')->group(function(){
 
 
 Route::get('/test',function (){
-
-//    dd( \auth()->user()->profilePictures);
     return \auth()->user()->profilePictures;
-    return;
-    $a = "header:head,prof:pro";
-//    return $a;
-    $a = explode(',', $a);
-    foreach ($a as $aa)
-    {
-        $b = strpos($aa, ':');
-        $value = substr($aa, $b + 1);
-        $key = substr($aa, 0,$b);
-        $res[$key] = $value;
-    }
-    return $res['header']; //done!
-
-
-
-
-
-    $a = "header:head,prof:pro";
-$a = explode(',', $a);
-
-$b = strpos($a[0], ':');
-$value = substr($a[0], $b + 1);
-$key = substr($a[0], 0,$b);
-$res[$key] = $value;
-return $res;
-
-
-
-
-//echo $key;
-
-//echo $a[0];
-//return $a[0];
-//return $a['header'];
 })->name('test');
 
 
 
 Route::post('/ip','UserController@ip');
-

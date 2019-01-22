@@ -50,19 +50,33 @@ class User extends Authenticatable
     public function getProfilePicturesAttribute($value)
     {
         $value = json_decode($value, true);
-
+        $result = $value;
         if($value['everyOne'] == null)
         {
-            $value['everyOne'] = $value['defaultProfile'];
+            $result['everyOne'] = $value['defaultProfile'];
 
         }
-//        if($value['friends'] == null)
-//        {
-//            $value['friends'] = $value['defaultProfile'];
-//
-//        }
+        if($value['friends'] == null)
+        {
+            $result['friends'] = $value['defaultProfile'];
 
-        return $value;
+        }
+        if($value['family'] == null)
+        {
+            $result['family'] = $value['defaultProfile'];
+
+        }
+        if($value['relatives'] == null)
+        {
+            $result['relatives'] = $value['defaultProfile'];
+
+        }
+        if($value['header'] == null)
+        {
+            $result['header'] = $value['defaultHeader'];
+
+        }
+        return $result;
     }
     public function getRouteKeyName()
     {

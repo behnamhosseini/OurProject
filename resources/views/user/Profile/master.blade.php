@@ -221,7 +221,7 @@
 				<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="{{auth()->user()->profilePictures['everyOne'] != null ? auth()->user()->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}" class="rounded-circle avatar ">
+						<img alt="author" src="{{auth()->user()->profilePictures['everyOne']}}" class="rounded-circle avatar ">
 						<span class="icon-status online"></span>
 					</div>
 					<a href="/ProfilePage/{{auth()->user()->userName}}" class="author-name fn">
@@ -386,7 +386,7 @@
 							@if($user->id !== auth()->user()->id)
 								<li class="inline-items" >
 									<div class="author-thumb">
-										<a href="/ProfilePage/{{$user->userName}}"><img data-toggle="popover" data-trigger="hover" data-title="{{$user->firstName}}" data-content="{{cache('user-is-online-' . $user->id) ? 'Online' : "آخرین بازدید : " . $user->lastActivity->format('Y/m/d - H:m:s') }}" alt="author" src="{{$user->profilePictures['everyOne'] != null ? $user->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}" class="avatar"></a>
+										<a href="/ProfilePage/{{$user->userName}}"><img data-toggle="popover" data-trigger="hover" data-title="{{$user->firstName}}" data-content="{{cache('user-is-online-' . $user->id) ? 'Online' : "آخرین بازدید : " . $user->lastActivity->format('Y/m/d - H:m:s') }}" alt="author" src="{{$user->profilePictures['everyOne'] }}" class="avatar"></a>
 										<span class="icon-status {{cache('user-is-online-' . $user->id) ? 'online' : 'disconected'}}"></span>
 										{{--@if(!cache('user-is-online-' . $user->id))--}}
 										{{--<small>last online : {{$user->lastActivity}}</small>--}}
@@ -1164,7 +1164,7 @@
                 @auth
                 <div class="author-thumb">
 
-                        <img alt="author" src="{{auth()->user()->profilePictures['everyOne'] != null ? auth()->user()->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}" class="avatar">
+                        <img alt="author" src="{{auth()->user()->profilePictures['everyOne'] }}" class="avatar">
                         <span class="icon-status online"></span>
 
                         <div class="more-dropdown">
