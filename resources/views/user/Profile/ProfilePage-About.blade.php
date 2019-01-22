@@ -161,6 +161,22 @@
                             <span class="title">وضعیت رابطه :</span>
                             <span class="text">{{$user->maritalStatus}} </span>
                         </li>
+                        @if($user->maritalStatus == "در رابطه")
+                            @if($user->inRellWith != null)
+                                <li>
+                                    <span class="title">در رابطه با:</span>
+                                    <span class="text">{{\App\User::where('id', $user->inRellWith)->first()->fullName()}} </span>
+                                </li>
+                            @endif
+                        @endif
+                        @if($user->maritalStatus == "متاهل")
+                            @if($user->inRellWith != null)
+                                <li>
+                                    <span class="title">همسر:</span>
+                                    <span class="text">{{\App\User::where('id', $user->inRellWith)->first()->fullName()}} </span>
+                                </li>
+                            @endif
+                        @endif
                         <li>
                             <span class="title">ایمیل :</span>
                             <a href="#" class="text">{{$user->email}}</a>

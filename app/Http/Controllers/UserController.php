@@ -393,7 +393,15 @@ class UserController extends Controller
 
     public function PersonalInformation()
     {
-        return view('user.Profile.PersonalInformation');
+        $followings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+        $followingUsers =[];
+        foreach ($followings as $id)
+        {
+            $followingUsers[] = User::where('id', $id)->get()->first();
+        }
+//        $followingUsers = json_encode($followingUsers);
+//        return $followingUsers;
+        return view('user.Profile.PersonalInformation',compact('followingUsers'));
     }
 
     public function accountSettings()
@@ -404,7 +412,7 @@ class UserController extends Controller
 
     public function savePersonalInformation()
     {
-
+//        return request();
         $date = explode('/', request('dateOfBirth'));
 
         $date = \Morilog\Jalali\CalendarUtils::toGregorian($date[0], $date[1], $date[2]);
@@ -420,6 +428,7 @@ class UserController extends Controller
             'sex' => 'nullable|string',
             'maritalStatus' => 'nullable|string',
             'inRellWith' => 'nullable|string',
+            'spouse' => 'nullable|string',
             'bio' => 'nullable|string',
             'degree' => 'nullable|string',
             'fieldOfStudy' => 'nullable|string',
@@ -448,7 +457,7 @@ class UserController extends Controller
                 'job' => request('job'),
                 'sex' => request('sex'),
                 'maritalStatus' => request('maritalStatus'),
-                'inRellWith' => request('inRellWith'),
+                'inRellWith' => request('inRellWith') ? request('inRellWith') : request('spouse'),
                 'bio' => request('bio'),
                 'degree' => request('degree'),
                 'fieldOfStudy' => request('fieldOfStudy'),

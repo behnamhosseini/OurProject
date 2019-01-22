@@ -9,14 +9,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
-	<link rel="stylesheet" href="/Bootstrap/css/bootstrap.css">
+
+    <!-- Required JavaScript -->
+    <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="/css/swiper.min.css">
 	<link href="/css/faceMocion.css" rel="stylesheet" type="text/css" />
+	<link href="/css/selectize.css" rel="stylesheet" type="text/css" />
 
-	<link rel="stylesheet" href="/css/emojionearea.css">
-	<link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/croppie.css">
-	<script src="http://demo.itsolutionstuff.com/plugin/croppie.js"></script>
+
+    <link rel="stylesheet" href="/css/emojionearea.css">
+    <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/croppie.css">
+    <script src="http://demo.itsolutionstuff.com/plugin/croppie.js"></script>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="/Bootstrap/css/bootstrap-reboot.css">
@@ -1945,7 +1950,6 @@
 
         $(document).ready(function(){
 
-
         $.ajax({
                 type: 'POST',
                 url: '/getCustomStatus',
@@ -1954,7 +1958,7 @@
                 }
             }).done(function(response) {
                 $("#customStatusShow").text(response)
-            });
+        });
 
             $("#customStatusForm").click(function(e){
                 e.preventDefault();
@@ -1993,6 +1997,8 @@
         $("#post").emojioneArea({
             pickerPosition: "bottom"
         });
+
+
     });
 </script>
 
@@ -2047,8 +2053,6 @@
 
 
 </script>
-
-
 
 
 <script src="/js/popper.min.js" ></script>
