@@ -113,22 +113,31 @@ class PostController extends Controller
     {
 
         $likeUser = Post::whereId($request->post_id)->get()->first()->likeCount;
-        $functur=$request->functur;
-        if (in_array($functur, $likeUser['id'])) {
-            $key = array_search($functur, $likeUser['id']);
-            unset($likeUser['id'][$key], $functur);
-            $likeUser['count'] = $likeUser['count'] - 1;
-            Post::whereId($request->post_id)->update([
-                'likeCount' => json_encode($likeUser),
-            ]);
-            return $likeUser['count'];
-        } else {
-            $likeUser['id'][]=json_decode($functur);
-            $likeUser['count'] = $likeUser['count']+1;
-            Post::whereId($request->post_id)->update([
-                'likeCount' => json_encode($likeUser),
-            ]);
-            return $likeUser['count'];
+        $functur = $request->functur;
+        if ($likeUser !== null) {
+            if (in_array($functur, $likeUser['id'])) {
+                $key = array_search($functur, $likeUser['id']);
+                unset($likeUser['id'][$key], $functur);
+                $likeUser['count'] = $likeUser['count'] - 1;
+                Post::whereId($request->post_id)->update([
+                    'likeCount' => json_encode($likeUser),
+                ]);
+                return $likeUser['count'];
+            } else {
+                $likeUser['id'][] = json_decode($functur);
+                $likeUser['count'] = $likeUser['count'] + 1;
+                Post::whereId($request->post_id)->update([
+                    'likeCount' => json_encode($likeUser),
+                ]);
+                return $likeUser['count'];
             }
+        } else {
+            $likeUser['id'][] = json_decode($functur);
+            $likeUser['count'] = 1;
+            Post::whereId($request->post_id)->update([
+                'likeCount' => json_encode($likeUser),
+            ]);
+            return $likeUser['count'];
         }
     }
+}

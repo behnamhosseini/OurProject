@@ -507,41 +507,6 @@
                                     </svg>
                                     <span id="count">{{$post->likeCount['count']}}</span>
                                 </a>
-                                <ul class="friends-harmonic">
-                                    <?php $i = 0;?>
-                                    @foreach($post->likeCount['id'] as $functure)
-                                        <?php if ($i == 9) {
-                                            breck;
-                                        } ?>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{\App\User::where('id',$functure)->first()->profilePictures['everyOne']}}"
-                                                     alt="friend">
-                                            </a>
-                                        </li>
-                                        <?php $i++; ?>
-                                    @endforeach
-                                </ul>
-
-                                <div class="names-people-likes">
-                                    <?php $i = 0;?>
-                                    @foreach($post->likeCount['id'] as $functure)
-                                        <?php if ($i == 5) {
-                                            breck;
-                                        } ?>
-                                        <a href="#">{{\App\User::where('id',$functure)->first()->firstName}}</a>@if($post->likeCount['count'] == 2)
-                                            و
-                                        @else ,
-                                        @endif
-                                        <?php $i++; ?>
-                                    @endforeach
-                                    @if($post->likeCount['count']  > 5  )
-                                        <br>و{{$post->likeCount['count'] - $i }}کاربر این پست را پسندیدند
-                                    @else
-                                        <br>این پست را پسندیدند
-                                    @endif()
-                                </div>
-
                                 <div class="comments-shared">
                                     <a href="#" class="post-add-icon inline-items">
                                         <svg class="olymp-speech-balloon-icon">
@@ -601,7 +566,8 @@
                             }).done(function (response) {
                                 $("#count").text(response);
                             })
-                        })
+                        });
+
                     </script>
                     @endforeach()
                     <a id="load-more-button" href="#" class="btn btn-control btn-more"
@@ -665,9 +631,9 @@
                     <div class="ui-block-title">
                         <h6 class="title">پیشنهاد دوستان</h6>
                         {{--<a href="#" class="more">--}}
-                            {{--<svg class="olymp-three-dots-icon">--}}
-                                {{--<use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>--}}
-                                {{----                        </svg>--}}
+                        {{--<svg class="olymp-three-dots-icon">--}}
+                        {{--<use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>--}}
+                        {{----                        </svg>--}}
                         {{--</a>--}}
                     </div>
                     <ul class="widget w-friend-pages-added notification-list friend-requests">
@@ -682,7 +648,8 @@
                                     <span class="chat-message-item">{{$count}} دوست مشترک</span>
                                 </div>
                                 <span class="notification-icon">
-                                  <button onclick="sendFollowRequest('{{$user->userName}}', event)" id="{{$user->userName}}" class="accept-request">
+                                  <button onclick="sendFollowRequest('{{$user->userName}}', event)"
+                                          id="{{$user->userName}}" class="accept-request">
 
                                     <span class="icon-add without-text">
                                       <svg class="olymp-happy-face-icon">
@@ -700,7 +667,7 @@
             @endif
 
 
-                <div class="ui-block">
+            <div class="ui-block">
 
                 <div class="ui-block-title">
                     <h6 class="title">خوراک فعالیت</h6>

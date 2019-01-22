@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('imageUrl')->nullable();
             $table->string('mood')->default("amo");
-            $table->text('likeCount');
+            $table->text('likeCount')->nullable();
             $table->integer('commentCount')->default(0);
             $table->integer('shareCount')->default(0);
             $table->string('postType')->default('post');

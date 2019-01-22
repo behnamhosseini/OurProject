@@ -19,7 +19,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'body' => $faker->realText($maxNbChars = 200, $indexSize = 2),
         'imageUrl' => $faker->imageUrl($width = 400, $height = 400), // 'http://lorempixel.com/640/480/,
         'mood' => $faker->randomElement($array = array ('amo','molesto', 'asusta', 'divierte', 'gusta', 'triste', 'asombro', 'alegre'), $count = 1),
-        'likeCount' => $faker->numberBetween($min = 10, $max = 9000),
         'commentCount' => $faker->numberBetween($min = 10, $max = 9000),
         'shareCount' => $faker->numberBetween($min = 10, $max = 9000),
         'postType' => $faker->randomElement($array = array ('post','vip'), $count = 1),
