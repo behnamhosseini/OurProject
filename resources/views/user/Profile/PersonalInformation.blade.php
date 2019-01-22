@@ -97,7 +97,6 @@
                                                 break;
                                         }
                                     });
-
                                 });
                             </script>
 
@@ -134,11 +133,17 @@
                             </div>
 
 
-                            <div id="inRellWith" class="col-lg-6 col-md-3 col-sm-12 col-xs-12">
+                            <div style="display: none" id="inRellWith" class="col-lg-6 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-group label-floating ">
                                     <label class="control-label">در رابطه با </label>
-                                    <input class="form-control" placeholder="" name="inRellWith" type="text"
-                                           value="{{auth()->check() ? auth()->user()->inRellWith  : ''}}">
+                                    <select class=" form-control" data-show-subtext="true" name="inRellWith" size="auto" data-live-search="true">
+                                        <option value="0"> ---- </option>
+                                        @foreach($followingUsers as $user)
+                                            <option {{auth()->check() ? auth()->user()->inRellWith == $user->id ? 'selected' : '' : '' }} value="{{$user->id}}">
+                                                {{$user->fullName()}} - {{$user->userName}}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
@@ -146,8 +151,14 @@
                             <div id="spouse" class="col-lg-6 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-group label-floating ">
                                     <label class="control-label">همسر </label>
-                                    <input class="form-control" placeholder="" name="marriedTo" type="text"
-                                           value="{{auth()->check() ? auth()->user()->inRellWith  : ''}}">
+                                    <select class=" form-control" data-show-subtext="true" name="spouse" size="auto" data-live-search="true">
+                                        <option value="0"> ---- </option>
+                                        @foreach($followingUsers as $user)
+                                            <option {{auth()->check() ? auth()->user()->inRellWith == $user->id ? 'selected' : '' : '' }} value="{{$user->id}}">
+                                                {{$user->fullName()}} - {{$user->userName}}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
@@ -317,8 +328,6 @@
 
             })
         </script>
-
-
 
 @endsection
 

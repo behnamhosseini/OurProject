@@ -147,4 +147,14 @@ class FollowController extends Controller
         }
         return $status;
     }
+
+    public function getFollowings()
+    {
+        $followings = Follow::where('user_id', auth()->user()->id)->get()->pluck('target_id');
+        foreach ($followings as $id)
+        {
+            $followingUsers[] = User::where('id', $id)->get()->first();
+        }
+        return response($followingUsers);
+    }
 }
