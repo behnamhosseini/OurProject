@@ -71,6 +71,7 @@ class User extends Authenticatable
             $result['relatives'] = $value['defaultProfile'];
 
         }
+        
         if($value['header'] == null)
         {
             $result['header'] = $value['defaultHeader'];
