@@ -37,8 +37,8 @@ class UserController extends Controller
 
     public function profilePage(User $user)
     {
-        $followings = Follow::where('user_id', $user->id)->where('status', '!=' ,1)->get();
-        $followers = Follow::where('target_id', $user->id)->where('status', '!=' ,1)->get();
+        $followings = Follow::where('user_id', $user->id)->where('status', '!=' ,0)->get();
+        $followers = Follow::where('target_id', $user->id)->where('status', '!=' ,0)->get();
 //        return $followings;
         return view('user.Profile.ProfilePage', compact('user', 'followers', 'followings'));
     }
