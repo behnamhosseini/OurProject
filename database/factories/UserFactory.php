@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\User::class, function (Faker $faker) {
-    $pic = json_decode('{"header":null,"everyOne":null,"friends":null,"family":null,"relatives":null,"defaultProfile":"\/img\/defaultMaleAvatar.png","defaultHeader":"\/img\/defaultHeaderImage.jpeg"}',true);
+    $pic = json_decode('{"header":null,"everyOne":null,"friends":null,"family":null,"relatives":null,"defaultProfile":"\/img\/defaultMaleAvatar.png","defaultHeader":"\/img\/defaultHeaderImage.jpg"}',true);
     return [
         'email' => $faker->unique()->safeEmail,
         'firstName' => $faker->firstName,

@@ -23,149 +23,309 @@
 @endsection
 
 @section('content3')
-    <div class="row">
-        <h3 class="col-12 text-info">دنبال شده توسط {{$user->firstName}}</h3>
-            @if($followings->isEmpty())
-                @if(auth()->user()->id == $user->id)
-                    <div class="col-12">
+    <div class="container">
+        <div class="row">
+            @if($user->id == auth()->user()->id)
+                <div class="col-12">
+                    <!-- Nav pills -->
+                    <ul class="bg-faded nav nav-pills justify-content-around">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="pill" href="#home">دوستان</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu1">خانواده</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu2">آشنایان</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#menu3">فالوور معمولی</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="home">
+                            @foreach($followersId as $followerId)
+                                @if($followerId->status == 2)
+                                    @foreach($followerUsers as $follower)
+                                        @if($follower->id == $followerId->user_id)
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4 mt-3 mb-5">
+                                                <div class="ui-block">
+                                                    <div class="friend-item">
+                                                        <div class="friend-header-thumb">
+                                                            <img src="{{$follower->profilePictures['header'] }}" alt="friend">
+                                                        </div>
 
-                        <small>تو فعلا کسی رو دنبال نکردی!</small><br>
-                        <small>میتونی با جست و جو  دوستاتو پیدا کنی!</small>
-                    </div>
-                @else
-                    <div class="col-12">
-                        <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
-                    </div>
-                @endif
+                                                        <div class="friend-item-content">
 
+                                                            <div class="friend-avatar">
+                                                                <div class="author-thumb">
+                                                                    <img src="{{$follower->profilePictures['everyOne']}}" alt="author">
+                                                                </div>
+                                                                <div class="author-content">
+                                                                    <a href="#" class="h5 author-name">{{$follower->fullName()}} </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane container fade" id="menu1">
+                            @foreach($followersId as $followerId)
+                                @if($followerId->status == 3)
+                                    @foreach($followerUsers as $follower)
+                                        @if($follower->id == $followerId->user_id)
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4 mt-3 mb-5">
+                                                <div class="ui-block">
+                                                    <div class="friend-item">
+                                                        <div class="friend-header-thumb">
+                                                            <img src="{{$follower->profilePictures['header'] }}" alt="friend">
+                                                        </div>
+
+                                                        <div class="friend-item-content">
+
+                                                            <div class="friend-avatar">
+                                                                <div class="author-thumb">
+                                                                    <img src="{{$follower->profilePictures['everyOne']}}" alt="author">
+                                                                </div>
+                                                                <div class="author-content">
+                                                                    <a href="#" class="h5 author-name">{{$follower->fullName()}} </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane container fade" id="menu2">
+                            @foreach($followersId as $followerId)
+                                @if($followerId->status == 4)
+                                    @foreach($followerUsers as $follower)
+                                        @if($follower->id == $followerId->user_id)
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4 mt-3 mb-5">
+                                                <div class="ui-block">
+                                                    <div class="friend-item">
+                                                        <div class="friend-header-thumb">
+                                                            <img src="{{$follower->profilePictures['header'] }}" alt="friend">
+                                                        </div>
+
+                                                        <div class="friend-item-content">
+
+                                                            <div class="friend-avatar">
+                                                                <div class="author-thumb">
+                                                                    <img src="{{$follower->profilePictures['everyOne']}}" alt="author">
+                                                                </div>
+                                                                <div class="author-content">
+                                                                    <a href="#" class="h5 author-name">{{$follower->fullName()}} </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tab-pane container fade" id="menu3">
+                            @foreach($followersId as $followerId)
+                                @if($followerId->status == 1)
+                                    @foreach($followerUsers as $follower)
+                                        @if($follower->id == $followerId->user_id)
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4 mt-3 mb-5">
+                                                <div class="ui-block">
+                                                    <div class="friend-item">
+                                                        <div class="friend-header-thumb">
+                                                            <img src="{{$follower->profilePictures['header'] }}" alt="friend">
+                                                        </div>
+
+                                                        <div class="friend-item-content">
+
+                                                            <div class="friend-avatar">
+                                                                <div class="author-thumb">
+                                                                    <img src="{{$follower->profilePictures['everyOne']}}" alt="author">
+                                                                </div>
+                                                                <div class="author-content">
+                                                                    <a href="#" class="h5 author-name">{{$follower->fullName()}} </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
             @else
-                @foreach($followings as $following)
-                    <?php $friendUser = \App\User::where('id', $following->target_id)->get()->first() ?>
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
-                        <div class="ui-block">
-                            <div class="friend-item">
-                                <div class="friend-header-thumb">
-                                    <img src="{{$friendUser->profilePictures['header'] != null ? $friendUser->profilePictures['header'] : '/img/top-header7.png'}}" alt="friend">
-                                </div>
+                <div class="col-12">
 
-                                <div class="friend-item-content">
+                    <h3 class="col-12 text-info">دنبال شده توسط {{$user->firstName}}</h3>
+                    @if(empty($followerUsers))
+                        @if(auth()->user()->id == $user->id)
+                            <div class="col-12">
 
-                                    <div class="friend-avatar">
-                                        <div class="author-thumb">
-                                            <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
+                                <small>تو فعلا کسی رو دنبال نکردی!</small><br>
+                                <small>میتونی با جست و جو  دوستاتو پیدا کنی!</small>
+                            </div>
+                        @else
+                            <div class="col-12">
+                                <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
+                            </div>
+                        @endif
+
+                    @else
+                        @foreach($followerUsers as $follower)
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                                <div class="ui-block">
+                                    <div class="friend-item">
+                                        <div class="friend-header-thumb">
+                                            <img src="{{$follower->profilePictures['header']}}" alt="friend">
                                         </div>
-                                        <div class="author-content">
-                                            <a href="#" class="h5 author-name">{{$friendUser->fullName()}} </a>
-                                            <div class="country">{{$friendUser->province}} - {{$friendUser->city}} </div>
+
+                                        <div class="friend-item-content">
+
+                                            <div class="friend-avatar">
+                                                <div class="author-thumb">
+                                                    <img src="{{$follower->profilePictures['everyOne']}}" alt="author">
+                                                </div>
+                                                <div class="author-content">
+                                                    <a href="#" class="h5 author-name">{{$follower->fullName()}} </a>
+                                                    <div class="country">{{$follower->province}} - {{$follower->city}} </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
+                                                <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
+                                                    @if($follower->id == auth()->user()->id or \App\User::checkFollowing($follower->id) )
+
+                                                    @else
+                                                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+                                                            <div class="control-block-button">
+                                                                <a style="background-color: #f47142" onclick="sendFollowRequest('{{$follower->userName}}',event)" href="#" class="btn btn-control bg-blue" id="{{$follower->userName}}">
+                                                                    <svg class="olymp-happy-face-icon " style="width: 20px; height: 20px">
+                                                                        <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                                                    </svg>
+                                                                </a>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
+                                                            <a href="#" class="btn btn-control bg-purple">
+                                                                <svg class="olymp-chat---messages-icon">
+                                                                    <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    @endif
+
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
-                                        <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
-                                            @if($friendUser->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
+                        @endforeach
+                    @endif
+                </div>
+            @endif
+                <div class="col-12">
 
-                                            @else
-                                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
-                                                    <div class="control-block-button">
-                                                        <a style="background-color: #f47142" onclick="sendFollowRequest(event)" href="#" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
-                                                            <svg class="olymp-happy-face-icon " style="width: 20px; height: 20px">
-                                                                <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                <h3 class="col-12 text-info">دنبال شده توسط {{$user->firstName}}</h3>
+                @if(empty($followingUsers))
+                    @if(auth()->user()->id == $user->id)
+                        <div class="col-12">
+
+                            <small>تو فعلا کسی رو دنبال نکردی!</small><br>
+                            <small>میتونی با جست و جو  دوستاتو پیدا کنی!</small>
+                        </div>
+                    @else
+                        <div class="col-12">
+                            <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
+                        </div>
+                    @endif
+
+                @else
+                    @foreach($followingUsers as $following)
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                            <div class="ui-block">
+                                <div class="friend-item">
+                                    <div class="friend-header-thumb">
+                                        <img src="{{$following->profilePictures['header']}}" alt="friend">
+                                    </div>
+
+                                    <div class="friend-item-content">
+
+                                        <div class="friend-avatar">
+                                            <div class="author-thumb">
+                                                <img src="{{$following->profilePictures['everyOne']}}" alt="author">
+                                            </div>
+                                            <div class="author-content">
+                                                <a href="#" class="h5 author-name">{{$following->fullName()}} </a>
+                                                <div class="country">{{$following->province}} - {{$following->city}} </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
+                                            <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
+                                                @if($following->id == auth()->user()->id or \App\User::checkFollowing($following->id) )
+
+                                                @else
+                                                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
+                                                        <div class="control-block-button">
+                                                            <a style="background-color: #f47142" onclick="sendFollowRequest('{{$following->userName}}',event)" href="#" class="btn btn-control bg-blue" id="{{$following->userName}}">
+                                                                <svg class="olymp-happy-face-icon " style="width: 20px; height: 20px">
+                                                                    <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
+                                                                </svg>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
+                                                        <a href="#" class="btn btn-control bg-purple">
+                                                            <svg class="olymp-chat---messages-icon">
+                                                                <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
                                                             </svg>
                                                         </a>
-
                                                     </div>
-                                                </div>
+                                                @endif
 
-                                                <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
-                                                    <a href="#" class="btn btn-control bg-purple">
-                                                        <svg class="olymp-chat---messages-icon">
-                                                            <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            @endif
+                                            </div>
 
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                @endforeach
-            @endif
-        <br><hr>
-        <h3 class="col-12 text-success">دنبال کننده های {{$user->firstName}}</h3>
-            @if($followers->isEmpty())
-                @if(auth()->user()->id == $user->id)
-                    <div class="col-12">
-
-                        <span class="pb-3"> فعلا کسی تو رو دنبال نکرده!</span><br>
-                    </div>
-                @else
-                    <div class="col-12">
-                        <small>{{$user->firstName}} فعلا کسی را دنبال نکرده است!</small>
-                    </div>
+                    @endforeach
                 @endif
-
-            @else
-                @foreach($followers as $follower)
-                    <?php $friendUser = \App\User::where('id', $follower->user_id)->get()->first() ?>
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4">
-                        <div class="ui-block">
-                            <div class="friend-item">
-                                <div class="friend-header-thumb">
-                                    <img src="{{$friendUser->profilePictures['header'] != null ? $friendUser->profilePictures['header'] : '/img/top-header7.png'}}" alt="friend">
-                                </div>
-
-                                <div class="friend-item-content">
-
-                                    <div class="friend-avatar">
-                                        <div class="author-thumb">
-                                            <img src="{{$friendUser->profilePictures['everyOne']}}" alt="author">
-                                        </div>
-                                        <div class="author-content">
-                                            <a href="#" class="h5 author-name">{{$friendUser->fullName()}} </a>
-                                            <div class="country">{{$friendUser->province}} - {{$friendUser->city}} </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-container swiper-swiper-unique-id-0 initialized swiper-container-horizontal swiper-container-rtl" data-slide="fade" id="swiper-unique-id-0">
-                                        <div class="swiper-wrapper" style="width: 784px; transform: translate3d(196px, 0px, 0px); transition-duration: 0ms;">
-                                            @if($friendUser->id == auth()->user()->id or \App\User::checkFollowing($friendUser->id) )
-
-                                            @else
-                                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 196px;">
-                                                    <div class="control-block-button">
-                                                        <button style="background-color: #f47142" onclick="sendFollowRequest('{{$friendUser->userName}}', event)" class="btn btn-control bg-blue" id="{{$friendUser->userName}}">
-                                                            <svg class="olymp-happy-face-icon" style="width: 20px; height: 20px">
-                                                                <use xlink:href="/icons/icons.svg#olymp-happy-face-icon"></use>
-                                                            </svg>
-                                                        </button>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 196px;">
-                                                    <a href="#" class="btn btn-control bg-purple">
-                                                        <svg class="olymp-chat---messages-icon">
-                                                            <use xlink:href="/icons/icons.svg#olymp-chat---messages-icon"></use>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            @endif
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                @endforeach
-            @endif
-
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -390,5 +550,6 @@
 
 
     </div>
+ </div>
 @endsection
 

@@ -37,8 +37,8 @@ class UserController extends Controller
 
     public function profilePage(User $user)
     {
-        $followings = Follow::where('user_id', $user->id)->where('status', 1)->get();
-        $followers = Follow::where('target_id', $user->id)->where('status', 1)->get();
+        $followings = Follow::where('user_id', $user->id)->where('status', '!=' ,1)->get();
+        $followers = Follow::where('target_id', $user->id)->where('status', '!=' ,1)->get();
 //        return $followings;
         return view('user.Profile.ProfilePage', compact('user', 'followers', 'followings'));
     }
@@ -63,9 +63,21 @@ class UserController extends Controller
     }
    public function profilePageFriends(User $user)
     {
-        $followings = Follow::where('user_id', $user->id)->where('status', 1)->get();
-        $followers = Follow::where('target_id', $user->id)->where('status', 1)->get();
-        return view('user.Profile.ProfilePage-Friends', compact('user', 'followers', 'followings'));
+//        $followingsId = Follow::where('user_id', $user->id)->where('status', 1)->get();
+//        $followersId = Follow::where('target_id', $user->id)->where('status', 1)->get();
+        $followingsId = Follow::where('user_id', $user->id)->get();
+        $followersId = Follow::where('target_id', $user->id)->get();
+        foreach ($followingsId as $following)
+        {
+            $followingUsers[] = \App\User::where('id', $following->target_id)->get()->first();
+        }
+        foreach ($followersId as $follower)
+        {
+            $followerUsers[] = \App\User::where('id', $follower->user_id)->get()->first();
+        }
+
+//        return $followersId;
+        return view('user.Profile.ProfilePage-Friends', compact('user', 'followersId', 'followingsId', 'followingUsers', 'followerUsers'));
     }
    public function ProfilePageBlogPosts(User $user)
     {

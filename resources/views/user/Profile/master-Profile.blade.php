@@ -27,7 +27,7 @@
                                         <li>
                                             <a href="/ProfilePagePhotos/{{$user->userName}}" class="{{Route::currentRouteName() == 'ProfilePagePhotos' ? 'active' : ''}} ">تصاویر</a>
                                         </li>
-                                        @if($user->accountType == 'public')
+                                        @if($user->accountType == 'public' or $user->id == auth()->user()->id)
                                             <li>
                                                 <a href="/ProfilePageFriends/{{$user->userName}}" class="{{Route::currentRouteName() == 'ProfilePageFriends' ? 'active' : ''}} ">دوستان</a>
                                             </li>
