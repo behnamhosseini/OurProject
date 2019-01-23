@@ -20,6 +20,14 @@ body * {
     width: 40px;
     overflow: hidden;
 }
+.anyClass {
+    height:150px;
+    overflow-y: scroll;
+}
+.anyClass {
+    height:150px;
+    overflow-y: scroll;
+}
 
 #headerImagePreview {
     width: 300px;

@@ -57,7 +57,7 @@ Route::middleware('checkFullyActivated')->group(function(){
     Route::post('/ip','UserController@ip');
     Route::post('/likePost','PostController@likePost');
     Route::post('/getFollowings','FollowController@getFollowings');
-
+    Route::post('/sendComment','CommentController@sendComment');
 });
 
 Route::middleware('checkPhoneActivated')->group(function(){
@@ -97,6 +97,5 @@ Route::get('/test',function (){
     return $res;
 })->name('test');
 
-
-
+Route::get('/get','CommentController@get');
 Route::post('/ip','UserController@ip');
