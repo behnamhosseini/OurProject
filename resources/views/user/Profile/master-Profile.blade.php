@@ -7,7 +7,7 @@
                 <div class="ui-block">
                     <div class="top-header">
                         <div class="top-header-thumb">
-                            <img src="{{$user->profilePictures['header'] ? $user->profilePictures['header'] : '/img/top-header7.png'}}" alt="header">
+                            <img src="{{$user->profilePictures['header']}}" alt="header">
                         </div>
                         <div class="profile-section">
                             <div class="row">
@@ -27,7 +27,7 @@
                                         <li>
                                             <a href="/ProfilePagePhotos/{{$user->userName}}" class="{{Route::currentRouteName() == 'ProfilePagePhotos' ? 'active' : ''}} ">تصاویر</a>
                                         </li>
-                                        @if($user->accountType == 'public')
+                                        @if($user->accountType == 'public' or $user->id == auth()->user()->id)
                                             <li>
                                                 <a href="/ProfilePageFriends/{{$user->userName}}" class="{{Route::currentRouteName() == 'ProfilePageFriends' ? 'active' : ''}} ">دوستان</a>
                                             </li>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="top-header-author">
                             <a href="/ProfilePage/{{$user->userName}}" class="author-thumb">
-                                <img src="{{$user->profilePictures['everyOne'] != null ? $user->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}">
+                                <img src="{{$user->profilePictures['everyOne'] }}">
                             </a>
                             <div class="author-content">
                                 <a class="h4 author-name">{{$user->fullName()}}</a>

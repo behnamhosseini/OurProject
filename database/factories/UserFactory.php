@@ -14,6 +14,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\User::class, function (Faker $faker) {
+    $pic = json_decode('{"header":null,"everyOne":null,"friends":null,"family":null,"relatives":null,"defaultProfile":"\/img\/defaultMaleAvatar.png","defaultHeader":"\/img\/defaultHeaderImage.jpg"}',true);
     return [
         'email' => $faker->unique()->safeEmail,
         'firstName' => $faker->firstName,
@@ -29,6 +30,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'fieldOfStudy' => $faker->bs,
         'phoneNumber' => $faker->e164PhoneNumber ,
         'maritalStatus' => $faker->randomElement($array = array ('مجرد','متاهل','در رابطه'), $count = 1),
+        'profilePictures' => $pic,
         'degree' => $faker->randomElement($array = array ('دیپلم','فوق دیپلم','لیسانس', 'فوق لیسانس', 'دکتری'), $count = 1),
         'dateOfBirth' => $faker->dateTimeBetween($startDate = '-40 years', $endDate = '-12 years', $timezone = null),
         'accountType' => $faker->randomElement($array = array ('public','private'), $count = 1),

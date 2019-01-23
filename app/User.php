@@ -47,6 +47,38 @@ class User extends Authenticatable
     {
         return jdate($value);
     }
+    public function getProfilePicturesAttribute($value)
+    {
+        $value = json_decode($value, true);
+        $result = $value;
+        if($value['everyOne'] == null)
+        {
+            $result['everyOne'] = $value['defaultProfile'];
+
+        }
+        if($value['friends'] == null)
+        {
+            $result['friends'] = $value['defaultProfile'];
+
+        }
+        if($value['family'] == null)
+        {
+            $result['family'] = $value['defaultProfile'];
+
+        }
+        if($value['relatives'] == null)
+        {
+            $result['relatives'] = $value['defaultProfile'];
+
+        }
+        
+        if($value['header'] == null)
+        {
+            $result['header'] = $value['defaultHeader'];
+
+        }
+        return $result;
+    }
     public function getRouteKeyName()
     {
         return 'userName';

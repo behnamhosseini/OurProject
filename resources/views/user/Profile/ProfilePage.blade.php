@@ -370,7 +370,7 @@
                         <article class="hentry post">
 
                             <div class="post__author author vcard inline-items">
-                                <img src="{{$user->profilePictures['everyOne'] != null ? $user->profilePictures['everyOne'] : '/img/photo-item8.jpg'}}" alt="author">
+                                <img src="{{$user->profilePictures['everyOne']}}" alt="author">
 
                                     <div class="author-date">
                                         <a class="h6 post__author-name fn" href="/ProfilePageAbout">{{$user->fullName()}}</a>
