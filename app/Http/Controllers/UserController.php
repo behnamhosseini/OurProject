@@ -278,7 +278,7 @@ class UserController extends Controller
         $friends = Follow::whereUser_id($user)->whereStatus(1)->get()->pluck('target_id');
         $friends[]=auth()->user()->id;
         foreach ($friends as $friend) {
-            $select[] = Post::whereUser_id($friend)->with('user')->get();
+            $select[] = Post::whereUser_id($friend)->with('user')->with('comments')->get();
         }
      $posts=[];
         foreach ($select as $item) {

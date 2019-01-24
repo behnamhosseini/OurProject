@@ -486,9 +486,6 @@
                                         <li>
                                             <a href="#">خاموش کردن اطلاعیه ها</a>
                                         </li>
-                                        <li>
-                                            <a href="#">انتخاب بعنوان ویژه شده</a>
-                                        </li>
                                     </ul>
                                 </div>
 
@@ -507,8 +504,11 @@
                                     </svg>
                                     <span id="count">{{$post->likeCount['count']}}</span>
                                 </a>
-                                <div class="comments-shared">
-                                    <a href="#" class="post-add-icon inline-items">
+
+
+                                <div class="comments-shared" data-target="#comment-view" data-toggle="modal">
+                                    <a class="post-add-icon inline-items" data-toggle="modal"
+                                       data-target="#comment-view">
                                         <svg class="olymp-speech-balloon-icon">
                                             <use xlink:href="/icons/icons.svg#olymp-speech-balloon-icon"></use>
                                         </svg>
@@ -525,33 +525,67 @@
 
 
                             </div>
-
                             <div class="control-block-button post-control-button">
 
-                                <a href="#" class="btn btn-control">
-                                    <svg class="olymp-like-post-icon">
-                                        <use xlink:href="/icons/icons.svg#olymp-like-post-icon"></use>
+                                <a href="#" class="btn btn-control" data-toggle="tooltip" data-placement="right"
+                                   data-original-title="افزودن به علاقه مندی ها">
+                                    <svg class="olymp-star-icon">
+                                        <use xlink:href="/icons/icons.svg#olymp-star-icon"></use>
                                     </svg>
                                 </a>
 
-                                <a href="#" class="btn btn-control">
+                                <a href="#" class="btn btn-control" data-toggle="tooltip" data-placement="right"
+                                   data-original-title="گزارش پست">
                                     <svg class="olymp-comments-post-icon">
                                         <use xlink:href="/icons/icons.svg#olymp-comments-post-icon"></use>
                                     </svg>
                                 </a>
-
-                                <a href="#" class="btn btn-control">
-                                    <svg class="olymp-share-icon">
-                                        <use xlink:href="/icons/icons.svg#olymp-share-icon"></use>
-                                    </svg>
-                                </a>
-
                             </div>
 
                         </article>
+                        <a href="#" class="more-comments" data-toggle="modal" data-target="#comment-view">مشاهده نظرات
+                            <span>+</span>
+                        </a>
+
+
+                        <form class="comment-form inline-items">
+
+                            <div class="post__author author vcard inline-items">
+                               <a class="post-add-icon inline-items">
+                                    <span id="sendComment">ارسال</span>
+                                </a>
+                                <div class="form-group with-icon-right ">
+                                    <textarea id="commentBody" class="form-control" placeholder=""></textarea>
+                                </div>
+
+                            </div>
+
+                        </form>
                     </div>
-
-
+                    <!--StartComment-view -->
+                @include('user.section.comment',$post)
+                <!--End Comment-view -->
+                    <script>
+                        $("#sendComment").click(function () {
+                            let body = $("#commentBody").val();
+                            $.ajax({
+                                method: 'post',
+                                url: '/sendComment',
+                                data: {
+                                    post_id: '{{$post->id}}',
+                                    user_id: '{{auth()->user()->id}}',
+                                    body : body,
+                                    _token: '{{csrf_token()}}'
+                                },
+                                success: function () {
+                                    swal("عالی", "نظر شما با موفقت ثبت شد!روی مشاهده نظرات کلیک کنید", "success");
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    swal("متاسفم!", "متن کامنت نمیتونه خالی باشه", "error");
+                                }
+                            })
+                        })
+                    </script>
                     <script>
                         $("#like").click(function () {
                             $.ajax({
@@ -561,13 +595,11 @@
                                     post_id: '{{$post->id}}',
                                     functur: '{{auth()->user()->id}}',
                                     _token: '{{csrf_token()}}'
-
                                 }
                             }).done(function (response) {
                                 $("#count").text(response);
                             })
                         });
-
                     </script>
                     @endforeach()
                     <a id="load-more-button" href="#" class="btn btn-control btn-more"
@@ -577,7 +609,7 @@
                             <use xlink:href="/icons/icons.svg#olymp-three-dots-icon"></use>
                         </svg>
                     </a>
-        </main>
+        </div>
 
 
     {{--<body class="overlay-enable modal-open">--}}

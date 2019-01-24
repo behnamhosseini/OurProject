@@ -506,6 +506,45 @@
 
         });
     </script>
+    <script>
+        $("#sendComment").click(function () {
+            let body = $("#commentBody").val();
+            $.ajax({
+                method: 'post',
+                url: '/sendComment',
+                data: {
+                    post_id: '{{$post->id}}',
+                    user_id: '{{auth()->user()->id}}',
+                    body : body,
+                    _token: '{{csrf_token()}}'
+                },
+                success: function () {
+                    swal("عالی", "نظر شما با موفقت ثبت شد!روی مشاهده نظرات کلیک کنید", "success");
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    swal("متاسفم!", "متن کامنت نمیتونه خالی باشه", "error");
+                }
+            })
+        })
+
+    </script>
+    <script>
+        $("#like").click(function () {
+            $.ajax({
+                method: 'post',
+                url: '/likePost',
+                data: {
+                    post_id: '{{$post->id}}',
+                    functur: '{{auth()->user()->id}}',
+                    _token: '{{csrf_token()}}'
+
+                }
+            }).done(function (response) {
+                $("#count").text(response);
+            })
+        });
+
+    </script>
 
 @endsection
 @section('content')

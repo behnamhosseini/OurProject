@@ -57,6 +57,9 @@ Route::middleware('checkFullyActivated')->group(function(){
     Route::post('/ip','UserController@ip');
     Route::post('/likePost','PostController@likePost');
     Route::post('/getFollowings','FollowController@getFollowings');
+    Route::post('/sendNewPoll','PollController@sendNewPoll');
+    Route::post('/sendAnswerPoll','PollController@sendAnswerPoll');
+    Route::post('/sendComment','CommentController@sendComment');
 
 });
 

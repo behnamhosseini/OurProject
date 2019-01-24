@@ -21,4 +21,9 @@ class Post extends Model
     {
         $this->attributes['post'] = str_replace(PHP_EOL , "<br>" , $value);
     }
+    public function comments()
+    {
+      return $this->hasMany(Comment::class);
+    }
+
 }
